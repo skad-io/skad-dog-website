@@ -20,6 +20,7 @@ switch ($method) {
   case 'PUT':
         break;
   case 'POST':
+	$debugfile = '/tmp/skad_dog.debug.txt';
 	$pathInfo = $_SERVER['PATH_INFO'];
 	$remoteAddr = $_SERVER['REMOTE_ADDR'];
 	$httpXForwardedFor = $_SERVER['HTTP_X_FORWARDED_FOR'];
@@ -36,22 +37,23 @@ switch ($method) {
 
 	$ipaddress = $input['rhost'];
 
-	// The next lines is for testing purposes only
-	//if (!filter_var($ipaddress, FILTER_VALIDATE_IP)) {
-	//	$ipaddress = "208.80.152.201";
-	}//
+	$sourceJson = file_get_contents("http://ip-api.com/json/".$ipaddress);
+	$source = json_decode($sourceJson, true);
 
-	if (filter_var($ipaddress, FILTER_VALIDATE_IP)) {
-
-		$sourceJson = file_get_contents("http://ip-api.com/json/".$ipaddress);
-		$source = json_decode($sourceJson, true);
+	if ($source['message'] !== 'invalid query') {
 		$twitterMessage = $source['org']." ($remoteAddr) tried to logon as [".$input['user']."] from ".$source['city'];
-
-		shell_exec("/home/pi/php_root /usr/local/bin/t update '".$twitterMessage."'");
+		
+		if ($input['user'] === 'skadtest') {
+			file_put_contents($debugfile, $twitterMessage."\n", FILE_APPEND | LOCK_EX);			
+		}
+		else {
+			file_put_contents($debugfile, "About to tweet -> ".$twitterMessage."\n", FILE_APPEND | LOCK_EX);			
+			shell_exec("/home/pi/php_root /usr/local/bin/t update '".$twitterMessage."'");
+		}
 	}
-
-	//$file = '/tmp/delme.txt';
-	//file_put_contents($file, $twitterMessage);
+	else {
+		file_put_contents($debugfile, "Login made from local network: ".$ipaddress."\n", FILE_APPEND | LOCK_EX);			
+	}
 
         break;
     case 'DELETE':
