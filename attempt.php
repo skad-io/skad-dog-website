@@ -3,9 +3,19 @@
 // get the HTTP method, path and body of the request
 $method = $_SERVER['REQUEST_METHOD'];
 
+$connection = new MongoClient("mongodb://localhost:27017");
+$dbname = $connection->selectDB('skad');
+$attempts = $dbname->attempts;
+
 switch ($method) {
   case 'GET':
-        echo "Hello GET World";
+        $results = $attempts->find();
+        foreach ($results as $result) {
+                foreach ($result as $item) {
+                        echo "$item,";
+                }
+                echo "<BR>\n";
+        }
         break;
   case 'PUT':
         break;
@@ -20,9 +30,6 @@ switch ($method) {
         $input['remoteAddr'] = $remoteAddr;
         $input['httpXForwardedFor'] = $httpXForwardedFor;
 
-        $connection = new MongoClient("mongodb://localhost:27017");
-        $dbname = $connection->selectDB('skad');
-        $attempts = $dbname->attempts;
         $attempts->insert($input);
         break;
     case 'DELETE':
@@ -30,4 +37,3 @@ switch ($method) {
 }
 
 ?>
-
