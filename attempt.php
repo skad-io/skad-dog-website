@@ -1,19 +1,33 @@
 <?php
 
-// Get the HTTP method, path and body of the request
+// get the HTTP method, path and body of the request
 $method = $_SERVER['REQUEST_METHOD'];
-$pathInfo = $_SERVER['PATH_INFO'];
-$request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
-$jsonInput = file_get_contents('php://input');
-$input = json_decode(file_get_contents('php://input'),true);
 
-// NOTE: at the moment this is storing the IP address of kit-encrypt proxy - what can be done about this?
-$input['remoteAddr'] = $remoteAddr;
-$input['httpXForwardedFor'] = $httpXForwardedFor
+switch ($method) {
+  case 'GET':
+        echo "Hello GET World";
+        break;
+  case 'PUT':
+        break;
+  case 'POST':
+        $pathInfo = $_SERVER['PATH_INFO'];
+        $remoteAddr = $_SERVER['REMOTE_ADDR'];
+        $httpXForwardedFor = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
+        $jsonInput = file_get_contents('php://input');
+        $input = json_decode(file_get_contents('php://input'),true);
 
-$connection = new MongoClient("mongodb://localhost:27017");
-$dbname = $connection->selectDB('skad');
-$attempts = $dbname->attempts;
-$attempts->insert($input);
+        $input['remoteAddr'] = $remoteAddr;
+        $input['httpXForwardedFor'] = $httpXForwardedFor;
+
+        $connection = new MongoClient("mongodb://localhost:27017");
+        $dbname = $connection->selectDB('skad');
+        $attempts = $dbname->attempts;
+        $attempts->insert($input);
+        break;
+    case 'DELETE':
+        break;
+}
 
 ?>
+
