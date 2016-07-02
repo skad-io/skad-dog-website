@@ -53,7 +53,7 @@ switch ($method) {
 	if ($source['message'] !== 'invalid query') {
 		file_put_contents($debugfile, "############################\n", FILE_APPEND | LOCK_EX);
 		
-		$tweet = $source['org']." ($ipaddress) tried to logon as [".$input['user']."] from ".$source['city']." in ".$source['city']. " #alerted =".$device."=";
+		$tweet = $source['org']." ($ipaddress) tried to logon as [".$input['user']."] from ".$source['city']." in ".$source['country']. " #alerted =".$device."=";
 
 		$shellExec = "/usr/bin/sudo ";
 		$twitterExec = $shellExec."/usr/local/bin/t";
@@ -61,23 +61,23 @@ switch ($method) {
 		if ($input['user'] === 'skadtest') {
 			file_put_contents($debugfile, "Switching twitter account to SKAD_Test\n", FILE_APPEND | LOCK_EX);
 			$command = $twitterExec." set active SKAD_Test tmv9q0pmITaLbNZG2PkeH80t1";
-			file_put_contents($debugfile, "command=".$command."\n", FILE_APPEND | LOCK_EX);			
+			file_put_contents($debugfile, "command=".$command."\n", FILE_APPEND | LOCK_EX);		
 			$output = shell_exec($command." 2>&1");
-			file_put_contents($debugfile, "shell_exec output=".$output."\n", FILE_APPEND | LOCK_EX);		
+			file_put_contents($debugfile, "shell_exec output=".$output."\n", FILE_APPEND | LOCK_EX);
 		}
 		
 		$command = $twitterExec." update \"".$tweet."\"";
 		
-		file_put_contents($debugfile, "About to tweet -> ".$tweet."\n", FILE_APPEND | LOCK_EX);			
+		file_put_contents($debugfile, "About to tweet -> ".$tweet."\n", FILE_APPEND | LOCK_EX);		
 		file_put_contents($debugfile, "command=".$command."\n", FILE_APPEND | LOCK_EX);			
 		$output = shell_exec($command." 2>&1");
-		file_put_contents($debugfile, "shell_exec output=".$output."\n", FILE_APPEND | LOCK_EX);			
+		file_put_contents($debugfile, "shell_exec output=".$output."\n", FILE_APPEND | LOCK_EX);	
 		if ($input['user'] === 'skadtest') {
 			file_put_contents($debugfile, "Switching twitter account back to SKAD_Dog\n", FILE_APPEND | LOCK_EX);
 			$command = $twitterExec." set active SKAD_Dog 8FLtRR906YYAFq7wmFaYCmDMA";
-			file_put_contents($debugfile, "command=".$command."\n", FILE_APPEND | LOCK_EX);			
+			file_put_contents($debugfile, "command=".$command."\n", FILE_APPEND | LOCK_EX);		
 			$output = shell_exec($command." 2>&1");
-			file_put_contents($debugfile, "shell_exec output=".$output."\n", FILE_APPEND | LOCK_EX);	
+			file_put_contents($debugfile, "shell_exec output=".$output."\n", FILE_APPEND | LOCK_EX);
 		}
 	}
 	else {
