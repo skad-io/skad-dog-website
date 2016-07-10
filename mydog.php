@@ -1,17 +1,30 @@
 <?php
 
+$name = $_GET["name"];
 $key = $_GET["key"];
 
-if ($key !== "") {
+if ($name !== "" || $key !== "") {
 	$connection = new MongoClient("mongodb://localhost:27017");
 	$dbname = $connection->selectDB('skad');
 	$attempts = $dbname->attempts;
 	$dogs = $dbname->dogs;
 	$rhosts = $dbname->rhosts;
+
+	if (empty($name)) {
+		$names = iterator_to_array($dogs->find(array("key" => "$key")));
+		$name = array_values($names)[0]["name"];
+	}
+	else if (empty($key)) {
+		$names = iterator_to_array($dogs->find(array("key" => "$key")));
+		$keys = iterator_to_array($dogs->find(array("name" => "$name")));
+		$key = array_values($keys)[0]["key"];
+	}
+
+
 	$query = array("key" => "$key");
 	$results = $attempts->find($query)->sort(array('timestamp'=>-1));
-	$names = iterator_to_array($dogs->find($query));
-	$name = array_values($names)[0]["name"];
+//	$names = iterator_to_array($dogs->find($query));
+//	$name = array_values($names)[0]["name"];
 	$apicount = 0;
 	$sourcesCache = array();
 	foreach ($results as $result) {
