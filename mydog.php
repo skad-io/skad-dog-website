@@ -3,28 +3,62 @@
 <head>
   <title>My Dog</title>
   <style>
+
   body {
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  padding: 100px;
+  padding: 50px;
   font-size: 13px;
   background: white;
 }
 
-div {
+
+#span2 {
+  direction: ltr;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  height: auto;
+  line-height: 17.875px;
+  text-align: left;
+  unicode-bidi: embed;
+  width: auto;
+}
+
+p {
+  -webkit-locale: "en";
+  color: rgb(41, 47, 51);
+  cursor: pointer;
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 300;
+  height: 136px;
+  letter-spacing: 0.259999990463257px;
+  line-height: 32px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  text-align: left;
+  white-space: pre-wrap;
+  width: 505.984375px;
+  word-wrap: break-word;
+}
+
+#div1 {
   display: inline-block;
   padding: 16px;
   margin: 10px 0;
-  max-width: 468px;
+  max-width: 506px;
   border: #ddd 1px solid;
   border-top-color: #eee;
   border-bottom-color: #bbb;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.15);
-  font: bold 14px/18px Helvetica, Arial, sans-serif;
+  font: bold 14px/18px Helvetica, Arial, sans-serif; */
   color: #000;
 }	
   	
-  </style>
+</style>
   
 </head>
 
@@ -34,6 +68,7 @@ div {
 
 $name = $_GET["name"];
 $key = $_GET["key"];
+$limit = $_GET["limit"];
 
 if ($name !== "" || $key !== "") {
 	$connection = new MongoClient("mongodb://localhost:27017");
@@ -54,9 +89,14 @@ if ($name !== "" || $key !== "") {
 
 
 	$query = array("key" => "$key");
-	$results = $attempts->find($query)->sort(array('timestamp'=>-1));
-//	$names = iterator_to_array($dogs->find($query));
-//	$name = array_values($names)[0]["name"];
+	
+	if (empty($name)) {
+		$results = $attempts->find($query)->sort(array('timestamp'=>-1));
+	}
+	else {
+		$results = $attempts->find($query)->sort(array('timestamp'=>-1))->limit((int)$limit);
+	}
+
 	$apicount = 0;
 	$sourcesCache = array();
 	foreach ($results as $result) {
@@ -91,14 +131,20 @@ if ($name !== "" || $key !== "") {
 			}
 		}
 
-		echo "<div>\n";
 		$timestamp = $result["timestamp"];
 		$org = $source["org"];
 		$city = $source["city"];
 		$country = $source["country"];
 		$rhost = $result["rhost"];
 		$user = $result["user"];
-		echo "$timestamp: $org ($rhost) tried to logon as [$user] from $city in $country #alerted =$name=";
+
+		echo "<div id='div1'>\n";
+		echo "<img id='img1' src='skaddog_small.jpg'></img>\n";
+		echo "<span id='span1'>&rlm;</span>\n";
+		echo "<span id='span2'>$timestamp</span>\n";
+		echo "<p>\n";
+		echo "$org ($rhost) tried to logon as [$user] from $city in $country #alerted =$name=";
+		echo "</p>\n";
 		echo "</div>\n";
 	}
 }	
