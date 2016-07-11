@@ -49,6 +49,9 @@ switch ($method) {
 	else if ($input['key'] === 'b8:27:eb:7c:5e:37') {
 		$device = "Didier";
 	}
+	else if ($input['key'] === '00:e0:4c:53:44:58') {
+		$device = "Gelert";
+	}
 
 	if ($source['message'] !== 'invalid query') {
 		file_put_contents($debugfile, "############################\n", FILE_APPEND | LOCK_EX);
