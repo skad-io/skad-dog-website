@@ -29,6 +29,7 @@ div {
   
 </head>
 
+<H1>The attempted attacks, as they happen</H1>
 
 <?php
 
