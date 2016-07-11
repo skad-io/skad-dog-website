@@ -1,3 +1,35 @@
+
+<html>
+
+<head>
+  <title>My Dog</title>
+  <style>
+  body {
+  font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 100px;
+  font-size: 13px;
+  background: white;
+}
+
+div {
+  display: inline-block;
+  padding: 16px;
+  margin: 10px 0;
+  max-width: 468px;
+  border: #ddd 1px solid;
+  border-top-color: #eee;
+  border-bottom-color: #bbb;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  font: bold 14px/18px Helvetica, Arial, sans-serif;
+  color: #000;
+}	
+  	
+  </style>
+  
+</head>
+
+
 <?php
 
 $name = $_GET["name"];
@@ -72,3 +104,4 @@ if ($name !== "" || $key !== "") {
 }	
 
 ?>
+</html>
