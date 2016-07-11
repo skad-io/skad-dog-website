@@ -43,19 +43,22 @@ switch ($method) {
 	// Temporary fix
 	$device = "";
 
-	if ($input['key'] === 'b8:27:eb:ee:5f:ee') {
-		$device = "Rocky";
+	$dogs = $dbname->dogs;
+	$key = $input["key"];
+	$names = iterator_to_array($dogs->find(array("key" => "$key")));
+	
+	file_put_contents($debugfile, "############################\n", FILE_APPEND | LOCK_EX);
+
+	if (!empty($names)) {
+		$device = array_values($names)[0]["name"];
+		file_put_contents($debugfile, "Retrieved name from database: $device\n", FILE_APPEND | LOCK_EX);
 	}
-	else if ($input['key'] === 'b8:27:eb:7c:5e:37') {
-		$device = "Didier";
-	}
-	else if ($input['key'] === '00:e0:4c:53:44:58') {
-		$device = "Gelert";
+	else {
+		$device = "Anonymous";
+		file_put_contents($debugfile, "Name not found in database so using: $device\n", FILE_APPEND | LOCK_EX);
 	}
 
-	if ($source['message'] !== 'invalid query') {
-		file_put_contents($debugfile, "############################\n", FILE_APPEND | LOCK_EX);
-		
+	if ($source['message'] !== 'invalid query') {		
 		$tweet = $source['org']." ($ipaddress) tried to logon as [".$input['user']."] from ".$source['city']." in ".$source['country']. " #alerted =".$device."=";
 
 		$shellExec = "/usr/bin/sudo ";
