@@ -136,7 +136,7 @@ if ($name !== "" || $key !== "") {
 
 	//	$timestamp = date_format(date_create($result["timestamp"]), 'U = Y-m-d H:i:s');
 	//	$timestamp = date_create_from_format("Ymd-His", $result["timestamp"]);
-	        $timestamp = DateTime::createFromFormat('Ymd - His', '20030101-013433')->format('d M Y  h:i:s');
+	        $timestamp = DateTime::createFromFormat('Ymd - His', $result["timestamp"])->format('d M Y  h:i:s');
 		//$timestamp = $result["timestamp"];
 		$org = $source["org"];
 		$city = $source["city"];
