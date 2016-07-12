@@ -13,6 +13,7 @@
 img {
   
  float: right; 
+  width: 50px;
 }
 
 #span2 {
