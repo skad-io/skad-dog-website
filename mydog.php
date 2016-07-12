@@ -10,7 +10,10 @@
   font-size: 13px;
   background: white;
 }
-
+img {
+  
+ float: right; 
+}
 
 #span2 {
   direction: ltr;
@@ -21,6 +24,8 @@
   text-align: left;
   unicode-bidi: embed;
   width: auto;
+  float: right;
+  margin-right: 50px;
 }
 
 p {
@@ -29,7 +34,7 @@ p {
   cursor: pointer;
   display: block;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 300;
   height: 136px;
   letter-spacing: 0.259999990463257px;
@@ -47,13 +52,14 @@ p {
 #div1 {
   display: inline-block;
   padding: 16px;
+  padding-bottom:20;
   margin: 10px 0;
   max-width: 506px;
   border: #ddd 1px solid;
   border-top-color: #eee;
   border-bottom-color: #bbb;
-  background:#e1f5ff;
   border-radius: 5px;
+  background:#e1f5ff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.15);
   font: bold 14px/18px Helvetica, Arial, sans-serif; */
   color: #000;
