@@ -132,7 +132,7 @@ if ($name !== "" || $key !== "") {
 			}
 		}
 
-		$timestamp = date_format($result["timestamp"], 'U = Y-m-d H:i:s');
+		$timestamp = date_format(date_create($result["timestamp"]), 'U = Y-m-d H:i:s');
 		$org = $source["org"];
 		$city = $source["city"];
 		$country = $source["country"];
