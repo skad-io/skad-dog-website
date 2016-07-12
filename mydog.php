@@ -4,7 +4,7 @@
   <title>My Dog</title>
   <style>
 
-  body {
+    body {
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 50px;
   font-size: 13px;
@@ -36,13 +36,14 @@ p {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 20px;
   font-weight: 300;
-  height: 136px;
+  
   letter-spacing: 0.259999990463257px;
   line-height: 32px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
   margin-top: 0px;
+  padding-right:50px;
   text-align: left;
   white-space: pre-wrap;
   width: 505.984375px;
@@ -63,7 +64,7 @@ p {
   box-shadow: 0 1px 3px rgba(0,0,0,0.15);
   font: bold 14px/18px Helvetica, Arial, sans-serif; */
   color: #000;
-}	
+}
   	
 </style>
   
