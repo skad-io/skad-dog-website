@@ -132,7 +132,7 @@ if ($name !== "" || $key !== "") {
 			}
 		}
 
-		$timestamp = $result["timestamp"];
+		$timestamp = date_format($result["timestamp"], 'U = Y-m-d H:i:s');
 		$org = $source["org"];
 		$city = $source["city"];
 		$country = $source["country"];
@@ -142,7 +142,7 @@ if ($name !== "" || $key !== "") {
 		echo "<div id='div1'>\n";
 		echo "<img id='img1' src='skaddog_small.jpg'></img>\n";
 		echo "<span id='span1'>&rlm;</span>\n";
-		echo "<span id='span2'>date_format($timestamp, 'U = Y-m-d H:i:s')</span>\n";
+		echo "<span id='span2'>$timestamp</span>\n";
 		echo "<p>\n";
 		echo "$org ($rhost) tried to logon as [$user] from $city in $country #alerted =$name=";
 		echo "</p>\n";
