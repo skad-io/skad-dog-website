@@ -52,6 +52,7 @@ p {
   border: #ddd 1px solid;
   border-top-color: #eee;
   border-bottom-color: #bbb;
+  background:#e1f5ff;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.15);
   font: bold 14px/18px Helvetica, Arial, sans-serif; */
