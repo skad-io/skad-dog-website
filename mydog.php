@@ -88,7 +88,9 @@ if ($name !== "" || $key !== "") {
 		$key = array_values($keys)[0]["key"];
 	}
 
+// Title of page:
         echo "<H1>The attempted attacks on $name, as they happen</H1>\n";
+        
 	$query = array("key" => "$key");
 	
 	if (empty($name)) {
@@ -132,8 +134,9 @@ if ($name !== "" || $key !== "") {
 			}
 		}
 
+	//	$timestamp = date_format(date_create($result["timestamp"]), 'U = Y-m-d H:i:s');
+	//	$timestamp = date_create_from_format("Ymd-His", $result["timestamp"]);
 		$timestamp = $result["timestamp"];
-		//$timestamp = date_create_from_format("Ymd-His", $result["timestamp"]);
 		$org = $source["org"];
 		$city = $source["city"];
 		$country = $source["country"];
