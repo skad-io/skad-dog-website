@@ -62,7 +62,7 @@ p {
   
 </head>
 
-<H1>The attempted attacks, as they happen</H1>
+<!--<H1>The attempted attacks, as they happen</H1>-->
 
 <?php
 
@@ -87,7 +87,7 @@ if ($name !== "" || $key !== "") {
 		$key = array_values($keys)[0]["key"];
 	}
 
-
+        echo "<H1>The attempted attacks on $name, as they happen</H1>\n";
 	$query = array("key" => "$key");
 	
 	if (empty($name)) {
