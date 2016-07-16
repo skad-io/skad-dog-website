@@ -73,7 +73,6 @@ p {
 
 .alert {
 	height: 100px;
-	border: 1px solid red;
 }  	
 
 .icon {
