@@ -87,10 +87,15 @@ p {
 .title {
 	background-color: white;
 	height: 20px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 13px;
 }
 
 .message {
 	height: 100px;	
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 20px;
+	font-weight: 300;
 }
 
 .separator {
@@ -196,9 +201,9 @@ if ($name !== "" || $key !== "") {
 		echo "</div>\n";
 */
 		echo "<div class='alert'>\n";
-		echo "	<div class='icon'>xxx</div>\n";
-		echo "	<div class='title'>xxx</div>\n";
-		echo "	<div class='message'>xxx</div>\n";
+		echo "	<div class='icon'><img id='img1' src='skaddog_small.jpg'></img></div>\n";
+		echo "	<div class='title'>$timestamp</div>\n";
+		echo "	<div class='message'>$org ($rhost) tried to logon as [$user] from $city in $country #alerted =$name=</div>\n";
 		echo "</div>\n";
 		echo "<div class='separator'></div>\n";
 	}
