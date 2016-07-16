@@ -32,12 +32,13 @@ body {
 	height: 20px;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 13px;
+	color: rgb(136, 153, 166);
 }
 
 .message {
-	height: 100px;	
+	height: 130px;	
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 20px;
+	font-size: 26px;
 	font-weight: 300;
 	color: rgb(41, 47, 51);
 }
