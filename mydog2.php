@@ -72,20 +72,17 @@ p {
 }
 
 .alert {
-	background-color: green;
 	height: 100px;
 	border: 1px solid red;
 }  	
 
 .icon {
-	background-color: blue;
 	width: 50px;
 	height: 100%;
 	float: left;
 }
 
 .title {
-	background-color: white;
 	height: 20px;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 13px;
@@ -96,6 +93,7 @@ p {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 20px;
 	font-weight: 300;
+	color: rgb(41, 47, 51);
 }
 
 .separator {
