@@ -15,7 +15,7 @@ body {
 }
 
 .alert {
-	height: 100px;
+	height: 150px;
 }  	
 
 .icon {
