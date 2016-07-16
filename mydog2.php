@@ -76,10 +76,15 @@ p {
 }  	
 
 .icon {
-	width: 50px;
+	width: 70px;
 	height: 100%;
 	float: left;
 }
+
+#dog-image {
+	width: 50px;
+}
+
 
 .title {
 	height: 20px;
@@ -95,9 +100,13 @@ p {
 	color: rgb(41, 47, 51);
 }
 
-.separator {
+.solid-separator {
 	background-color: black;
 	height: 2px;
+}
+
+.clear-separator {
+	height: 10px;
 }
   	
 </style>
@@ -198,11 +207,12 @@ if ($name !== "" || $key !== "") {
 		echo "</div>\n";
 */
 		echo "<div class='alert'>\n";
-		echo "	<div class='icon'><img id='img1' src='skaddog_small.jpg'></img></div>\n";
+		echo "	<div class='icon'><img id='dog-image' src='skaddog_small.jpg'></img></div>\n";
 		echo "	<div class='title'>$timestamp</div>\n";
 		echo "	<div class='message'>$org ($rhost) tried to logon as [$user] from $city in $country #alerted =$name=</div>\n";
 		echo "</div>\n";
-		echo "<div class='separator'></div>\n";
+		echo "<div class='solid-separator'></div>\n";
+		echo "<div class='clear-separator'></div>\n";
 	}
 
 	echo "</div>\n";
