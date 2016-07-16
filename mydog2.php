@@ -67,6 +67,37 @@ p {
   color: #000;
 }
   	
+.column {
+	max-width: 500px;	
+}
+
+.alert {
+	background-color: green;
+	height: 100px;
+	border: 1px solid red;
+}  	
+
+.icon {
+	background-color: blue;
+	width: 50px;
+	height: 100%;
+	float: left;
+}
+
+.title {
+	background-color: white;
+	height: 20px;
+}
+
+.message {
+	height: 100px;	
+}
+
+.separator {
+	background-color: black;
+	height: 2px;
+}
+  	
 </style>
   
 </head>
@@ -107,6 +138,8 @@ if ($name !== "" || $key !== "") {
 	else {
 		$results = $attempts->find($query)->sort(array('timestamp'=>-1))->limit((int)$limit);
 	}
+
+	echo "<div class='column'>\n";
 
 	$apicount = 0;
 	$sourcesCache = array();
@@ -152,6 +185,7 @@ if ($name !== "" || $key !== "") {
 		$rhost = $result["rhost"];
 		$user = $result["user"];
 
+/*
 		echo "<div id='div1'>\n";
 		echo "<img id='img1' src='skaddog_small.jpg'></img>\n";
 		echo "<span id='span1'>&rlm;</span>\n";
@@ -160,7 +194,16 @@ if ($name !== "" || $key !== "") {
 		echo "$org ($rhost) tried to logon as [$user] from $city in $country #alerted =$name=";
 		echo "</p>\n";
 		echo "</div>\n";
+*/
+		echo "<div class='alert'>\n";
+		echo "	<div class='icon'>xxx</div>\n";
+		echo "	<div class='title'>xxx</div>\n";
+		echo "	<div class='message'>xxx</div>\n";
+		echo "</div>\n";
+		echo "<div class='separator'></div>\n";
 	}
+
+	echo "</div>\n";
 }	
 
 ?>
