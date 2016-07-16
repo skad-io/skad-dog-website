@@ -75,6 +75,7 @@ p {
 .column {
 	display: inline-block;
 	max-width: 500px;	
+	margin: 0 auto;
 }
 
 .alert {
@@ -155,7 +156,7 @@ if ($name !== "" || $key !== "") {
 		$results = $attempts->find($query)->sort(array('timestamp'=>-1))->limit((int)$limit);
 	}
 
-	echo "<div class='outer-column'>\n";
+//	echo "<div class='outer-column'>\n";
 	echo "<div class='column'>\n";
 
 	$apicount = 0;
@@ -222,7 +223,7 @@ if ($name !== "" || $key !== "") {
 	}
 
 	echo "</div>\n";
-	echo "</div>\n";
+//	echo "</div>\n";
 }	
 
 ?>
