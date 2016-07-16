@@ -67,7 +67,13 @@ p {
   color: #000;
 }
   	
+.outer-column {
+  width: 100%;
+  text-align: center;	
+}  	
+
 .column {
+	display: inline-block;
 	max-width: 500px;	
 }
 
@@ -84,7 +90,6 @@ p {
 #dog-image {
 	width: 50px;
 }
-
 
 .title {
 	height: 20px;
@@ -150,6 +155,7 @@ if ($name !== "" || $key !== "") {
 		$results = $attempts->find($query)->sort(array('timestamp'=>-1))->limit((int)$limit);
 	}
 
+	echo "<div class='outer-column'>\n";
 	echo "<div class='column'>\n";
 
 	$apicount = 0;
@@ -215,6 +221,7 @@ if ($name !== "" || $key !== "") {
 		echo "<div class='clear-separator'></div>\n";
 	}
 
+	echo "</div>\n";
 	echo "</div>\n";
 }	
 
