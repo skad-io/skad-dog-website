@@ -28,7 +28,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 text-center">
-                            <h5 class="uppercase mb0">Don't have your own Watch Dog yet? Check out what <a href="mydog.php?name=Didier">Didier</a> is barking about.</h5>
+                            <h5 class="uppercase mb0">Don't have your own Watch Dog yet? Check out what <a href="mydog.php?name=Rocky">Rocky</a> is barking about.</h5>
                         </div>
                     </div>
                 </div>
