@@ -70,15 +70,15 @@ else if (empty($key)) {
 </section>
 
 <!-- Map section -->
-<!--section>
+<section>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 text-center">
-                <h2 class="uppercase mb0">D3 Map</h2>
+            <div class="map">
+
             </div>
          </div>
     </div>
-</section-->
+</section>
 
 <!-- The notifications section -->
 <section >
@@ -97,6 +97,8 @@ else if (empty($key)) {
 
 	$apicount = 0;
 	$sourcesCache = array();
+	$places = "[";
+
 	foreach ($results as $result) {
 		$rhost = $result["rhost"];
 
@@ -136,6 +138,7 @@ else if (empty($key)) {
 	    $ago = time() - $timestamp_unix;
 	    $plural = "";
         $fresh = "";
+        $text = "ago";
 	    
 	    // If the bark is pretty fresh, add the 'fresh' class and styling to the bark.
 	    if ($ago < 1800){
@@ -146,6 +149,14 @@ else if (empty($key)) {
 	    // Turn into most sensible unit
         $ago = floor($ago / 60);
         $unit = "minute";
+        if ($ago == 0){
+        	// Special case less than a minute
+        	$ago = "Just now";
+        	$text = "";
+        	$plural = "";
+        	$unit = "";
+
+        }
         if ($ago > 60){
         	 $ago = floor($ago / 60);
              $unit = "hour";
@@ -159,7 +170,7 @@ else if (empty($key)) {
              $unit = "week";
         }
         // And add the 's' if it's not just 1
-        if ($ago !== 1){
+        if ($ago > 1 ){
         	$plural = "s";
         }
 
@@ -175,12 +186,20 @@ else if (empty($key)) {
 		}
 
 		echo "<div id='div1' class='feature mt16 col-sm-12 bg-secondary bark $fresh'>\n";
-		echo "<span id='span2' class='time'>$ago $unit$plural ago</span>\n";
+		echo "<span id='span2' class='time'>$ago $unit$plural $text</span>\n";
 		echo "<p class='mt8'>\n";
 		echo "$org ($rhost) tried to logon to $name from $city in $country as [$user]";
 		echo "</p>\n";
 		echo "</div>\n";
+
+		$latitude = $source["lat"];
+		$longitude = $source["lon"];
+
+		$places = $places . "{ location: { latitude: " . $latitude . ", longitude: " . $longitude . " } },";
+
 	}
+	$places = $places . "]";
+	
 ?>
             </div>
 
@@ -206,7 +225,23 @@ else if (empty($key)) {
     </div>
 </section>
 
-
+<?php include 'map.html'; ?> 
+<script>
+var places = <?php echo "$places"; ?>;
+ 
+     svg.selectAll(".pin")
+          .data(places)
+          .enter().append("circle", ".pin")
+          .attr("r", 5)
+          .attr("transform", function(d) {
+            return "translate(" + projection([
+              d.location.longitude,
+              d.location.latitude
+            ]) + ")";
+          }).
+          style( "fill", "#fb8013");     
+    </script>
+              
     <?php include 'footer.html'; ?> 
     </body>
 </html>

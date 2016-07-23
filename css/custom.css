@@ -11,3 +11,17 @@ a .dark-text{
 .emphasise{
 	font-size: 3em;
 }
+
+  svg{
+    background-color: #009df0;
+  }
+
+  svg circle{
+    background-color: #fb8013;
+    color: #fb8013;
+  }
+  path {
+    stroke: #fff;
+    stroke-width: 0.5px;
+    fill: #fff;
+  }
