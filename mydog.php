@@ -75,6 +75,8 @@ p {
 
 <?php
 
+phpinfo();
+
 $name = $_GET["name"];
 $key = $_GET["key"];
 $limit = $_GET["limit"];
