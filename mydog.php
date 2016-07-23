@@ -136,6 +136,7 @@ else if (empty($key)) {
 	    $ago = time() - $timestamp_unix;
 	    $plural = "";
         $fresh = "";
+        $text = "ago";
 	    
 	    // If the bark is pretty fresh, add the 'fresh' class and styling to the bark.
 	    if ($ago < 1800){
@@ -146,6 +147,14 @@ else if (empty($key)) {
 	    // Turn into most sensible unit
         $ago = floor($ago / 60);
         $unit = "minute";
+        if ($ago == 0){
+        	// Special case less than a minute
+        	$ago = "Just now";
+        	$text = "";
+        	$plural = "";
+        	$unit = "";
+
+        }
         if ($ago > 60){
         	 $ago = floor($ago / 60);
              $unit = "hour";
@@ -159,7 +168,7 @@ else if (empty($key)) {
              $unit = "week";
         }
         // And add the 's' if it's not just 1
-        if ($ago !== 1){
+        if ($ago !== 1 || $ago !== 0 ){
         	$plural = "s";
         }
 
@@ -175,7 +184,7 @@ else if (empty($key)) {
 		}
 
 		echo "<div id='div1' class='feature mt16 col-sm-12 bg-secondary bark $fresh'>\n";
-		echo "<span id='span2' class='time'>$ago $unit$plural ago</span>\n";
+		echo "<span id='span2' class='time'>$ago $unit$plural $text</span>\n";
 		echo "<p class='mt8'>\n";
 		echo "$org ($rhost) tried to logon to $name from $city in $country as [$user]";
 		echo "</p>\n";
