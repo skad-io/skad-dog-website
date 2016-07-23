@@ -1,0 +1,1417 @@
+/*!
+// Contents
+// ------------------------------------------------
+
+ 1. Blue
+ 2. Green
+ 3. Yellow
+ 4. Orange
+ 5. Pink
+ 6. Purple
+ 
+/*!---------- 1. Blue ----------*/
+.blue .page-title {
+  background-color: #009df0;
+  color: white;
+}
+.blue .page-title h1,
+.blue .page-title h2,
+.blue .page-title h3,
+.blue .page-title h4{
+  color: white;
+}
+.blue hr {
+  border-top: 1px solid #009df0;
+}
+.blue hr.short-thick {
+  border-top: 5px solid #009df0;
+}
+.blue .image-bg.bg-light hr,
+.blue .bg-dark hr,
+.blue .bg-secondary blockquote,
+.blue .image-bg .btn.btn-filled,
+.blue .image-bg .btn-filled:visited  {
+  border-color: #009df0;
+}
+.text-blue,
+.blue h1,
+.blue h2,
+.blue h3,
+.blue h4,
+.blue h5,
+.blue h6,
+.blue a,
+.blue .bg-light a,
+.blue .bg-light a:hover,
+.blue a:hover,
+.blue .bg-primary .list-inline i   {
+  color: #009df0;
+}
+.blue blockquote  {
+  background: #e1f5ff;
+}
+.blue .bg-primary {
+  background: #009df0 !important;
+}
+.blue .color-primary {
+  color: #009df0 !important;
+}
+.blue .background-multiply .background-image-holder {
+  background-color: #009df0 !important;
+}
+.blue .btn:hover,
+.blue .btn-filled {
+  background: #009df0;
+  color:white;
+}
+.blue .btn {
+  border: 2px solid #009df0;
+  color: #009df0;
+}
+.blue .btn.bg-dark {
+  border-color: #009df0;
+}
+.blue .btn.bg-dark:hover {
+  background: #009df0;
+}
+.blue .widget-handle .function {
+  background: #00796b;
+}
+.blue .widget-handle .cart .label {
+  background: #009df0;
+ }
+ .blue .alert-warning {
+  border: 1px solid #009df0;
+  color: #009df0;
+}
+.blue .alert-success,
+.blue .alert-danger {
+  border: 1px solid #69cbff;
+  color: #69cbff;
+}
+.blue  .icon,
+.blue  .image-bg.bg-light .icon,
+.blue  .input-with-label span {
+  color: #00796b;
+}
+.blue input[type="submit"],
+.blue button[type="submit"] {
+  border: 2px solid #009df0;
+  background: #009df0;
+}
+.blue .bg-primary input[type="submit"],
+.blue .bg-primary button[type="submit"] {
+  color: #009df0;
+}
+.blue  input[type="submit"].hollow,
+.blue button[type="submit"].hollow {
+  border: 2px solid #009df0;
+  color: #009df0;
+}
+.blue input[type="submit"].hollow:hover,
+.blue button[type="submit"].hollow:hover {
+  background: #009df0;
+}
+.blue .checkbox-option,
+.blue .radio-option,
+.blue .checkbox-option .inner,
+.blue .radio-option .inner {
+  border: 1px solid #009df0;
+}
+.blue .checkbox-option.checked .inner,
+.blue .radio-option.checked .inner,
+.blue .accordion-1 .active .title,
+.blue .accordion-1 .active .title:hover,
+.blue .button-tabs .active .tab-title,
+.blue .button-tabs .active .tab-title:hover,
+.blue .text-tabs .tab-title:after {
+  background: #009df0;
+}
+.blue .text-tabs .active .tab-title {
+  color: #009df0;
+}
+.blue .bg-primary .text-tabs .tab-title:after {
+  background: #e1f5ff;
+}
+.blue .icon-tabs .active .tab-title,
+.blue .icon-tabs .active .tab-title i {
+  color: #009df0;
+}
+.blue .progress-bar {
+  background: #009df0;
+}
+.blue .bg-primary .progress-bar {
+  background: #69cbff;
+}
+.blue .progress-2 .bar-holder {
+  border: 1px solid #009df0;
+}
+.blue .bg-primary .progress-2 .bar-holder {
+  border-color: #69cbff;
+}
+.blue .pagination li a:hover,
+.blue .pagination li.active a,
+.blue .pagination li.active:hover a {
+  background: #009df0;
+  border-color: #009df0;
+}
+.blue .feature.boxed.bg-dark {
+  background: #009df0;
+}
+.blue .bg-dark .feature.boxed {
+  background: #00796b;
+}
+.blue .feature-1 i {
+  color: #009df0;
+}
+.blue .feature-2 i {
+  border: 1px solid #009df0;
+  color: #009df0;
+}
+.blue .feature-2 i:hover,
+.blue .feature-2.filled i {
+  background: #009df0;
+}
+.blue .feature-3 i {
+  color: #009df0;
+}
+.blue .feature-color:nth-of-type(1) {
+  background: #009df0;
+}
+.blue .feature-color:nth-of-type(2) {
+  background: #00796b;
+}
+.blue .feature-color:nth-of-type(3) {
+  background: #00796b;
+}
+.blue .pricing-table.emphasis {
+  background: #009df0;
+}
+.blue .cart-overview a:hover {
+  color: #009df0;
+}
+.blue .image-bg.bg-light p,
+.blue .image-bg.bg-light span,
+.blue .image-bg.bg-light li {
+  color: #e1f5ff;
+}
+.blue .product-single .price:not(.old-price) {
+  color: #009df0;
+}
+.blue .cart .remove-item {
+  border: 1px solid #69cbff;
+  color: #69cbff;
+}
+.blue .cart .remove-item:hover {
+  background: #69cbff;
+}
+.blue .spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px #009df0;
+}
+.blue .filters li {
+  border: 2px solid #009df0;
+  color: #009df0;
+}
+.blue .filters li.active {
+  border-color: #009df0;
+}
+.blue .sc-background-orange {
+  background: #009df0 !important;
+} 
+.blue .overlay:before {
+  background: #009df0;
+}
+.blue .image-bg h1, 
+.blue .image-bg h2, 
+.blue .image-bg h3, 
+.blue .image-bg h4, 
+.blue .image-bg h5, 
+.blue .image-bg h6 
+{
+    color: #ffffff;
+}
+.blue .image-bg .btn:hover,
+.blue .image-bg .btn:visited:hover
+{
+    background: #009df0;
+    color: #fff;
+    border-color: #009df0;
+}
+.blue .image-bg .btn
+{
+    color: #fff;
+}
+
+/*!---------- 2. Green ----------*/
+.green .page-title {
+  background-color: #2eca00;
+  color: white;
+}
+.green .page-title h1,
+.green .page-title h2,
+.green .page-title h3,
+.green .page-title h4{
+  color: white;
+}
+.green hr {
+  border-top: 1px solid #2eca00;
+}
+.green hr.short-thick {
+  border-top: 5px solid #2eca00;
+}
+.green .image-bg.bg-light hr,
+.green .bg-dark hr,
+.green .bg-secondary blockquote,
+.green .image-bg .btn.btn-filled,
+.green .image-bg .btn-filled:visited  {
+  border-color: #2eca00;
+}
+.text-green,
+.green h1,
+.green h2,
+.green h3,
+.green h4,
+.green h5,
+.green h6,
+.green a,
+.green .bg-light a,
+.green .bg-light a:hover,
+.green a:hover,
+.green .bg-primary .list-inline i   {
+  color: #2eca00;
+}
+.green blockquote  {
+  background: #d8ffcd;
+}
+.green .bg-primary {
+  background: #2eca00 !important;
+}
+.green .color-primary {
+  color: #2eca00 !important;
+}
+.green .background-multiply .background-image-holder {
+  background-color: #2eca00 !important;
+}
+
+.green .btn:hover,
+.green .btn-filled{
+  background: #2eca00;
+  color:white;
+}
+.green .btn {
+  border: 2px solid #2eca00;
+  color: #2eca00;
+}
+.green .btn.bg-dark {
+  border-color: #2eca00;
+}
+.green .btn.bg-dark:hover {
+  background: #2eca00;
+}
+.green .overlay:before {
+  background: #2eca00;
+}
+.green .widget-handle .function {
+  background: #25a000;
+}
+.green .widget-handle .cart .label {
+  background: #2eca00;
+ }
+ .green .alert-warning {
+  border: 1px solid #2eca00;
+  color: #2eca00;
+}
+.green .alert-success,
+.green .alert-danger {
+  border: 1px solid #7bff55;
+  color: #7bff55;
+}
+.green  .icon,
+.green  .image-bg.bg-light .icon,
+.green  .input-with-label span {
+  color: #25a000;
+}
+.green input[type="submit"],
+.green button[type="submit"] {
+  border: 2px solid #2eca00;
+  background: #2eca00;
+}
+.green .bg-primary input[type="submit"],
+.green .bg-primary button[type="submit"] {
+  color: #2eca00;
+}
+.green  input[type="submit"].hollow,
+.green button[type="submit"].hollow {
+  border: 2px solid #2eca00;
+  color: #2eca00;
+}
+.green input[type="submit"].hollow:hover,
+.green button[type="submit"].hollow:hover {
+  background: #2eca00;
+}
+.green .checkbox-option,
+.green .radio-option,
+.green .checkbox-option .inner,
+.green .radio-option .inner {
+  border: 1px solid #2eca00;
+}
+.green .checkbox-option.checked .inner,
+.green .radio-option.checked .inner,
+.green .accordion-1 .active .title,
+.green .accordion-1 .active .title:hover,
+.green .button-tabs .active .tab-title,
+.green .button-tabs .active .tab-title:hover,
+.green .text-tabs .tab-title:after {
+  background: #2eca00;
+}
+.green .text-tabs .active .tab-title {
+  color: #2eca00;
+}
+.green .bg-primary .text-tabs .tab-title:after {
+  background: #d8ffcd;
+}
+.green .icon-tabs .active .tab-title,
+.green .icon-tabs .active .tab-title i {
+  color: #2eca00;
+}
+.green .progress-bar {
+  background: #2eca00;
+}
+.green .bg-primary .progress-bar {
+  background: #7bff55;
+}
+.green .progress-2 .bar-holder {
+  border: 1px solid #2eca00;
+}
+.green .bg-primary .progress-2 .bar-holder {
+  border-color: #7bff55;
+}
+.green .pagination li a:hover,
+.green .pagination li.active a,
+.green .pagination li.active:hover a {
+  background: #2eca00;
+  border-color: #2eca00;
+}
+.green .feature.boxed.bg-dark {
+  background: #2eca00;
+}
+.green .bg-dark .feature.boxed {
+  background: #25a000;
+}
+.green .feature-1 i {
+  color: #2eca00;
+}
+.green .feature-2 i {
+  border: 1px solid #2eca00;
+  color: #2eca00;
+}
+.green .feature-2 i:hover,
+.green .feature-2.filled i {
+  background: #2eca00;
+}
+.green .feature-3 i {
+  color: #2eca00;
+}
+.green .feature-color:nth-of-type(1) {
+  background: #2eca00;
+}
+.green .feature-color:nth-of-type(2) {
+  background: #25a000;
+}
+.green .feature-color:nth-of-type(3) {
+  background: #25a000;
+}
+.green .pricing-table.emphasis {
+  background: #2eca00;
+}
+.green .cart-overview a:hover {
+  color: #2eca00;
+}
+.green .image-bg.bg-light p,
+.green .image-bg.bg-light span,
+.green .image-bg.bg-light li {
+  color: #d8ffcd;
+}
+.green .product-single .price:not(.old-price) {
+  color: #2eca00;
+}
+.green .cart .remove-item {
+  border: 1px solid #7bff55;
+  color: #7bff55;
+}
+.green .cart .remove-item:hover {
+  background: #7bff55;
+}
+.green .spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px #2eca00;
+}
+.green .filters li {
+  border: 2px solid #2eca00;
+  color: #2eca00;
+}
+.green .filters li.active {
+  border-color: #2eca00;
+}
+.green .sc-background-orange {
+  background: #2eca00 !important;
+} 
+.green .image-bg h1, 
+.green .image-bg h2, 
+.green .image-bg h3, 
+.green .image-bg h4, 
+.green .image-bg h5, 
+.green .image-bg h6 
+{
+    color: #ffffff;
+}
+.green .image-bg .btn:hover,
+.green .image-bg .btn:visited:hover
+{
+    background: #2eca00;
+    color: #fff;
+    border-color: #2eca00;
+}
+.green .image-bg .btn
+{
+    color: #fff;
+}
+
+
+
+/*!---------- 3. Yellow ----------*/
+.yellow .page-title {
+  background-color: #fed200;
+  color: white;
+}
+.yellow .page-title h1,
+.yellow .page-title h2,
+.yellow .page-title h3,
+.yellow .page-title h4{
+  color: white;
+}
+.yellow hr {
+  border-top: 1px solid #fed200;
+}
+.yellow hr.short-thick {
+  border-top: 5px solid #fed200;
+}
+.yellow .image-bg.bg-light hr,
+.yellow .bg-dark hr,
+.yellow .bg-secondary blockquote,
+.yellow .image-bg .btn.btn-filled,
+.yellow .image-bg .btn-filled:visited  {
+  border-color: #fed200;
+}
+.text-yellow,
+.yellow h1,
+.yellow h2,
+.yellow h3,
+.yellow h4,
+.yellow h5,
+.yellow h6,
+.yellow a,
+.yellow .bg-light a,
+.yellow .bg-light a:hover,
+.yellow a:hover,
+.yellow .bg-primary .list-inline i   {
+  color: #fed200;
+}
+.yellow blockquote  {
+  background: #ffffcd;
+}
+.yellow .bg-primary {
+  background: #fed200 !important;
+}
+.yellow .color-primary {
+  color: #fed200 !important;
+}
+.yellow .background-multiply .background-image-holder {
+  background-color: #fed200 !important;
+}
+.yellow .btn:hover,
+.yellow .btn-filled {
+  background: #fed200;
+  color:white;
+}
+.yellow .btn {
+  border: 2px solid #fed200;
+  color: #fed200;
+}
+.yellow .btn.bg-dark {
+  border-color: #fed200;
+}
+.yellow .btn.bg-dark:hover {
+  background: #fed200;
+}
+.yellow .overlay:before {
+  background: #fed200;
+}
+.yellow .widget-handle .function {
+  background: #c8a500;
+}
+.yellow .widget-handle .cart .label {
+  background: #fed200;
+ }
+ .yellow .alert-warning {
+  border: 1px solid #fed200;
+  color: #fed200;
+}
+.yellow .alert-success,
+.yellow .alert-danger {
+  border: 1px solid #ffe569;
+  color: #ffe569;
+}
+.yellow  .icon,
+.yellow  .image-bg.bg-light .icon,
+.yellow  .input-with-label span {
+  color: #c8a500;
+}
+.yellow input[type="submit"],
+.yellow button[type="submit"] {
+  border: 2px solid #fed200;
+  background: #fed200;
+}
+.yellow .bg-primary input[type="submit"],
+.yellow .bg-primary button[type="submit"] {
+  color: #fed200;
+}
+.yellow  input[type="submit"].hollow,
+.yellow button[type="submit"].hollow {
+  border: 2px solid #fed200;
+  color: #fed200;
+}
+.yellow input[type="submit"].hollow:hover,
+.yellow button[type="submit"].hollow:hover {
+  background: #fed200;
+}
+.yellow .checkbox-option,
+.yellow .radio-option,
+.yellow .checkbox-option .inner,
+.yellow .radio-option .inner {
+  border: 1px solid #fed200;
+}
+.yellow .checkbox-option.checked .inner,
+.yellow .radio-option.checked .inner,
+.yellow .accordion-1 .active .title,
+.yellow .accordion-1 .active .title:hover,
+.yellow .button-tabs .active .tab-title,
+.yellow .button-tabs .active .tab-title:hover,
+.yellow .text-tabs .tab-title:after {
+  background: #fed200;
+}
+.yellow .text-tabs .active .tab-title {
+  color: #fed200;
+}
+.yellow .bg-primary .text-tabs .tab-title:after {
+  background: #ffffcd;
+}
+.yellow .icon-tabs .active .tab-title,
+.yellow .icon-tabs .active .tab-title i {
+  color: #fed200;
+}
+.yellow .progress-bar {
+  background: #fed200;
+}
+.yellow .bg-primary .progress-bar {
+  background: #ffe569;
+}
+.yellow .progress-2 .bar-holder {
+  border: 1px solid #fed200;
+}
+.yellow .bg-primary .progress-2 .bar-holder {
+  border-color: #ffe569;
+}
+.yellow .pagination li a:hover,
+.yellow .pagination li.active a,
+.yellow .pagination li.active:hover a {
+  background: #fed200;
+  border-color: #fed200;
+}
+.yellow .feature.boxed.bg-dark {
+  background: #fed200;
+}
+.yellow .bg-dark .feature.boxed {
+  background: #c8a500;
+}
+.yellow .feature-1 i {
+  color: #fed200;
+}
+.yellow .feature-2 i {
+  border: 1px solid #fed200;
+  color: #fed200;
+}
+.yellow .feature-2 i:hover,
+.yellow .feature-2.filled i {
+  background: #fed200;
+}
+.yellow .feature-3 i {
+  color: #fed200;
+}
+.yellow .feature-color:nth-of-type(1) {
+  background: #fed200;
+}
+.yellow .feature-color:nth-of-type(2) {
+  background: #c8a500;
+}
+.yellow .feature-color:nth-of-type(3) {
+  background: #c8a500;
+}
+.yellow .pricing-table.emphasis {
+  background: #fed200;
+}
+.yellow .cart-overview a:hover {
+  color: #fed200;
+}
+.yellow .image-bg.bg-light p,
+.yellow .image-bg.bg-light span,
+.yellow .image-bg.bg-light li {
+  color: #ffffcd;
+}
+.yellow .product-single .price:not(.old-price) {
+  color: #fed200;
+}
+.yellow .cart .remove-item {
+  border: 1px solid #69cbff;
+  color: #ffe569;
+}
+.yellow .cart .remove-item:hover {
+  background: #ffe569;
+}
+.yellow .spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px #fed200;
+}
+.yellow .filters li {
+  border: 2px solid #fed200;
+  color: #fed200;
+}
+.yellow .filters li.active {
+  border-color: #fed200;
+}
+.yellow .sc-background-orange {
+  background: #fed200 !important;
+} 
+.yellow .image-bg h1, 
+.yellow .image-bg h2, 
+.yellow .image-bg h3, 
+.yellow .image-bg h4, 
+.yellow .image-bg h5, 
+.yellow .image-bg h6 
+{
+    color: #ffffff;
+}
+.yellow .image-bg .btn:hover,
+.yellow .image-bg .btn:visited:hover
+{
+    background: #fed200;
+    color: #fff;
+    border-color: #fed200;
+}
+.yellow .image-bg .btn
+{
+    color: #fff;
+}
+
+
+
+/*!---------- 4. Orange ----------*/
+.orange .page-title {
+  background-color: #fb8013;
+  color: white;
+}
+.orange .page-title h1,
+.orange .page-title h2,
+.orange .page-title h3,
+.orange .page-title h4{
+  color: white;
+}
+.orange hr {
+  border-top: 1px solid #fb8013;
+}
+.orange hr.short-thick {
+  border-top: 5px solid #fb8013;
+}
+.orange .image-bg.bg-light hr,
+.orange .bg-dark hr,
+.orange .bg-secondary blockquote,
+.orange .image-bg .btn.btn-filled,
+.orange .image-bg .btn-filled:visited  {
+  border-color: #fb8013;
+}
+.text-orange,
+.orange h1,
+.orange h2,
+.orange h3,
+.orange h4,
+.orange h5,
+.orange h6,
+.orange a,
+.orange .bg-light a,
+.orange .bg-light a:hover,
+.orange a:hover,
+.orange .bg-primary .list-inline i   {
+  color: #fb8013;
+}
+.orange blockquote  {
+  background: #ffe5cd;
+}
+.orange .bg-primary {
+  background: #fb8013 !important;
+}
+.orange .color-primary {
+  color: #fb8013 !important;
+}
+.orange .background-multiply .background-image-holder {
+  background-color: #fb8013 !important;
+}
+.orange .btn:hover,
+.orange .btn-filled {
+  background: #fb8013;
+  color:white;
+}
+.orange .btn {
+  border: 2px solid #fb8013;
+  color: #fb8013;
+}
+.orange .btn.bg-dark {
+  border-color: #fb8013;
+}
+.orange .btn.bg-dark:hover {
+  background: #fb8013;
+}
+.orange .overlay:before {
+  background: #fb8013;
+}
+.orange .widget-handle .function {
+  background: #dc6800;
+}
+.orange .widget-handle .cart .label {
+  background: #fb8013;
+ }
+.orange .alert-warning {
+  border: 1px solid #fb8013;
+  color: #fb8013;
+}
+.orange .alert-success,
+.orange .alert-danger {
+  border: 1px solid #ffb069;
+  color: #ffb069;
+}
+.orange  .icon,
+.orange  .image-bg.bg-light .icon,
+.orange  .input-with-label span {
+  color: #dc6800;
+}
+.orange input[type="submit"],
+.orange button[type="submit"] {
+  border: 2px solid #fb8013;
+  background: #fb8013;
+}
+.orange .bg-primary input[type="submit"],
+.orange .bg-primary button[type="submit"] {
+  color: #fb8013;
+}
+.orange  input[type="submit"].hollow,
+.orange button[type="submit"].hollow {
+  border: 2px solid #fb8013;
+  color: #fb8013;
+}
+.orange input[type="submit"].hollow:hover,
+.orange button[type="submit"].hollow:hover {
+  background: #fb8013;
+}
+.orange .checkbox-option,
+.orange .radio-option,
+.orange .checkbox-option .inner,
+.orange .radio-option .inner {
+  border: 1px solid #fb8013;
+}
+.orange .checkbox-option.checked .inner,
+.orange .radio-option.checked .inner,
+.orange .accordion-1 .active .title,
+.orange .accordion-1 .active .title:hover,
+.orange .button-tabs .active .tab-title,
+.orange .button-tabs .active .tab-title:hover,
+.orange .text-tabs .tab-title:after {
+  background: #fb8013;
+}
+.orange .text-tabs .active .tab-title {
+  color: #fb8013;
+}
+.orange .bg-primary .text-tabs .tab-title:after {
+  background: #ffe5cd;
+}
+.orange .icon-tabs .active .tab-title,
+.orange .icon-tabs .active .tab-title i {
+  color: #fb8013;
+}
+.orange .progress-bar {
+  background: #fb8013;
+}
+.orange .bg-primary .progress-bar {
+  background: #ffb069;
+}
+.orange .progress-2 .bar-holder {
+  border: 1px solid #fb8013;
+}
+.orange .bg-primary .progress-2 .bar-holder {
+  border-color: #ffb069;
+}
+.orange .pagination li a:hover,
+.orange .pagination li.active a,
+.orange .pagination li.active:hover a {
+  background: #fb8013;
+  border-color: #fb8013;
+}
+.orange .feature.boxed.bg-dark {
+  background: #fb8013;
+}
+.orange .bg-dark .feature.boxed {
+  background: #dc6800;
+}
+.orange .feature-1 i {
+  color: #fb8013;
+}
+.orange .feature-2 i {
+  border: 1px solid #fb8013;
+  color: #fb8013;
+}
+.orange .feature-2 i:hover,
+.orange .feature-2.filled i {
+  background: #fb8013;
+}
+.orange .feature-3 i {
+  color: #fb8013;
+}
+.orange .feature-color:nth-of-type(1) {
+  background: #fb8013;
+}
+.orange .feature-color:nth-of-type(2) {
+  background: #dc6800;
+}
+.orange .feature-color:nth-of-type(3) {
+  background: #dc6800;
+}
+.orange .pricing-table.emphasis {
+  background: #fb8013;
+}
+.orange .cart-overview a:hover {
+  color: #fb8013;
+}
+.orange .image-bg.bg-light p,
+.orange .image-bg.bg-light span,
+.orange .image-bg.bg-light li {
+  color: #ffe5cd;
+}
+.orange .product-single .price:not(.old-price) {
+  color: #fb8013;
+}
+.orange .cart .remove-item {
+  border: 1px solid #ffb069;
+  color: #ffb069;
+}
+.orange .cart .remove-item:hover {
+  background: #ffb069;
+}
+.orange .spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px #fb8013;
+}
+.orange .filters li {
+  border: 2px solid #fb8013;
+  color: #fb8013;
+}
+.orange .filters li.active {
+  border-color: #fb8013;
+}
+.orange .sc-background-orange {
+  background: #fb8013 !important;
+} 
+.orange .image-bg h1, 
+.orange .image-bg h2, 
+.orange .image-bg h3, 
+.orange .image-bg h4, 
+.orange .image-bg h5, 
+.orange .image-bg h6 
+{
+    color: #ffffff;
+}
+.orange .image-bg .btn:hover,
+.orange .image-bg .btn:visited:hover
+{
+    background: #fb8013;
+    color: #fff;
+    border-color: #fb8013;
+}
+.orange .image-bg .btn
+{
+    color: #fff;
+}
+
+
+
+/*!---------- 5. Pink ----------*/
+.pink .page-title {
+  background-color: #e632ad;
+  color: white;
+}
+.pink .page-title h1,
+.pink .page-title h2,
+.pink .page-title h3,
+.pink .page-title h4{
+  color: white;
+}
+.pink hr {
+  border-top: 1px solid #e632ad;
+}
+.pink hr.short-thick {
+  border-top: 5px solid #e632ad;
+}
+.pink .image-bg.bg-light hr,
+.pink .bg-dark hr,
+.pink .bg-secondary blockquote,
+.pink .image-bg .btn.btn-filled,
+.pink .image-bg .btn-filled:visited  {
+  border-color: #e632ad;
+}
+.text-pink,
+.pink h1,
+.pink h2,
+.pink h3,
+.pink h4,
+.pink h5,
+.pink h6,
+.pink a,
+.pink .bg-light a,
+.pink .bg-light a:hover,
+.pink a:hover,
+.pink .bg-primary .list-inline i   {
+  color: #e632ad;
+}
+.pink blockquote  {
+  background: #f6e3fa;
+}
+.pink .bg-primary {
+  background: #e632ad !important;
+}
+.pink .color-primary {
+  color: #e632ad !important;
+}
+.pink .background-multiply .background-image-holder {
+  background-color: #e632ad !important;
+}
+.pink .btn:hover,
+.pink .btn-filled{
+  background: #e632ad;
+  color:white;
+}
+.pink .btn {
+  border: 2px solid #e632ad;
+  color: #e632ad;
+}
+.pink .btn.bg-dark {
+  border-color: #e632ad;
+}
+.pink .btn.bg-dark:hover {
+  background: #e632ad;
+}
+.pink .overlay:before {
+  background: #e632ad;
+}
+.pink .widget-handle .function {
+  background: #c80089;
+}
+.pink .widget-handle .cart .label {
+  background: #e632ad;
+ }
+ .pink .alert-warning {
+  border: 1px solid #e632ad;
+  color: #e632ad;
+}
+.pink .alert-success,
+.pink .alert-danger {
+  border: 1px solid #f18bd1;
+  color: #f18bd1;
+}
+.pink  .icon,
+.pink  .image-bg.bg-light .icon,
+.pink  .input-with-label span {
+  color: #c80089;
+}
+.pink input[type="submit"],
+.pink button[type="submit"] {
+  border: 2px solid #e632ad;
+  background: #e632ad;
+}
+.pink .bg-primary input[type="submit"],
+.pink .bg-primary button[type="submit"] {
+  color: #e632ad;
+}
+.pink  input[type="submit"].hollow,
+.pink button[type="submit"].hollow {
+  border: 2px solid #e632ad;
+  color: #e632ad;
+}
+.pink input[type="submit"].hollow:hover,
+.pink button[type="submit"].hollow:hover {
+  background: #e632ad;
+}
+.pink .checkbox-option,
+.pink .radio-option,
+.pink .checkbox-option .inner,
+.pink .radio-option .inner {
+  border: 1px solid #e632ad;
+}
+.pink .checkbox-option.checked .inner,
+.pink .radio-option.checked .inner,
+.pink .accordion-1 .active .title,
+.pink .accordion-1 .active .title:hover,
+.pink .button-tabs .active .tab-title,
+.pink .button-tabs .active .tab-title:hover,
+.pink .text-tabs .tab-title:after {
+  background: #e632ad;
+}
+.pink .text-tabs .active .tab-title {
+  color: #e632ad;
+}
+.pink .bg-primary .text-tabs .tab-title:after {
+  background: #fce4f4;
+}
+.pink .icon-tabs .active .tab-title,
+.pink .icon-tabs .active .tab-title i {
+  color: #e632ad;
+}
+.pink .progress-bar {
+  background: #e632ad;
+}
+.pink .bg-primary .progress-bar {
+  background: #f18bd1;
+}
+.pink .progress-2 .bar-holder {
+  border: 1px solid #e632ad;
+}
+.pink .bg-primary .progress-2 .bar-holder {
+  border-color: #f18bd1;
+}
+.pink .pagination li a:hover,
+.pink .pagination li.active a,
+.pink .pagination li.active:hover a {
+  background: #e632ad;
+  border-color: #e632ad;
+}
+.pink .feature.boxed.bg-dark {
+  background: #e632ad;
+}
+.pink .bg-dark .feature.boxed {
+  background: #c80089;
+}
+.pink .feature-1 i {
+  color: #e632ad;
+}
+.pink .feature-2 i {
+  border: 1px solid #e632ad;
+  color: #e632ad;
+}
+.pink .feature-2 i:hover,
+.pink .feature-2.filled i {
+  background: #e632ad;
+}
+.pink .feature-3 i {
+  color: #e632ad;
+}
+.pink .feature-color:nth-of-type(1) {
+  background: #e632ad;
+}
+.pink .feature-color:nth-of-type(2) {
+  background: #c80089;
+}
+.pink .feature-color:nth-of-type(3) {
+  background: #c80089;
+}
+.pink .pricing-table.emphasis {
+  background: #e632ad;
+}
+.pink .cart-overview a:hover {
+  color: #e632ad;
+}
+.pink .image-bg.bg-light p,
+.pink .image-bg.bg-light span,
+.pink .image-bg.bg-light li {
+  color: #fce4f4;
+}
+.pink .product-single .price:not(.old-price) {
+  color: #e632ad;
+}
+.pink .cart .remove-item {
+  border: 1px solid #f18bd1;
+  color: #f18bd1;
+}
+.pink .cart .remove-item:hover {
+  background: #f18bd1;
+}
+.pink .spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px #e632ad;
+}
+.pink .filters li {
+  border: 2px solid #e632ad;
+  color: #e632ad;
+}
+.pink .filters li.active {
+  border-color: #e632ad;
+}
+.pink .sc-background-orange {
+  background: #e632ad !important;
+}
+.pink .image-bg h1, 
+.pink .image-bg h2, 
+.pink .image-bg h3, 
+.pink .image-bg h4, 
+.pink .image-bg h5, 
+.pink .image-bg h6 
+{
+    color: #ffffff;
+}
+.pink .image-bg .btn:hover,
+.pink .image-bg .btn:visited:hover
+{
+    background: #e632ad;
+    color: #fff;
+    border-color: #e632ad;
+}
+.pink .image-bg .btn
+{
+    color: #fff;
+}
+
+
+
+/*!---------- 6. Purple ----------*/
+.purple .page-title {
+  background-color: #b311ed;
+  color: white;
+}
+.purple .page-title h1,
+.purple .page-title h2,
+.purple .page-title h3,
+.purple .page-title h4{
+  color: white;
+}
+.purple hr {
+  border-top: 1px solid #b311ed;
+}
+.purple hr.short-thick {
+  border-top: 5px solid #b311ed;
+}
+.purple .image-bg.bg-light hr,
+.purple .bg-dark hr,
+.purple .bg-secondary blockquote,
+.purple .image-bg .btn.btn-filled,
+.purple .image-bg .btn-filled:visited  {
+  border-color: #b311ed;
+}
+.text-purple,
+.purple h1,
+.purple h2,
+.purple h3,
+.purple h4,
+.purple h5,
+.purple h6,
+.purple a,
+.purple .bg-light a,
+.purple .bg-light a:hover,
+.purple a:hover,
+.purple .bg-primary .list-inline i   {
+  color: #b311ed;
+}
+.purple blockquote  {
+  background: #fce4f4;
+}
+.purple .bg-primary {
+  background: #b311ed !important;
+}
+.purple .color-primary {
+  color: #b311ed !important;
+}
+.purple .background-multiply .background-image-holder {
+  background-color: #b311ed !important;
+}
+.purple .btn:hover,
+.purple .btn-filled {
+  background: #b311ed;
+  color:white;
+}
+.purple .btn {
+  border: 2px solid #b311ed;
+  color: #b311ed;
+}
+.purple .btn.bg-dark {
+  border-color: #b311ed;
+}
+.purple .btn.bg-dark:hover {
+  background: #b311ed;
+}
+.purple .widget-handle .function {
+  background: #7f0ca8;
+}
+.purple .widget-handle .cart .label {
+  background: #b311ed;
+ }
+ .purple .alert-warning {
+  border: 1px solid #b311ed;
+  color: #b311ed;
+}
+.purple .alert-success,
+.purple .alert-danger {
+  border: 1px solid #d373f5;
+  color: #d373f5;
+}
+.purple  .icon,
+.purple  .image-bg.bg-light .icon,
+.purple  .input-with-label span {
+  color: #7f0ca8;
+}
+.purple input[type="submit"],
+.purple button[type="submit"] {
+  border: 2px solid #b311ed;
+  background: #b311ed;
+}
+.purple .bg-primary input[type="submit"],
+.purple .bg-primary button[type="submit"] {
+  color: #b311ed;
+}
+.purple  input[type="submit"].hollow,
+.purple button[type="submit"].hollow {
+  border: 2px solid #b311ed;
+  color: #b311ed;
+}
+.purple input[type="submit"].hollow:hover,
+.purple button[type="submit"].hollow:hover {
+  background: #b311ed;
+}
+.purple .checkbox-option,
+.purple .radio-option,
+.purple .checkbox-option .inner,
+.purple .radio-option .inner {
+  border: 1px solid #b311ed;
+}
+.purple .checkbox-option.checked .inner,
+.purple .radio-option.checked .inner,
+.purple .accordion-1 .active .title,
+.purple .accordion-1 .active .title:hover,
+.purple .button-tabs .active .tab-title,
+.purple .button-tabs .active .tab-title:hover,
+.purple .text-tabs .tab-title:after {
+  background: #b311ed;
+}
+.purple .text-tabs .active .tab-title {
+  color: #b311ed;
+}
+.purple .bg-primary .text-tabs .tab-title:after {
+  background: #f6e3fd;
+}
+.purple .icon-tabs .active .tab-title,
+.purple .icon-tabs .active .tab-title i {
+  color: #b311ed;
+}
+.purple .progress-bar {
+  background: #b311ed;
+}
+.purple .bg-primary .progress-bar {
+  background: #d373f5;
+}
+.purple .progress-2 .bar-holder {
+  border: 1px solid #b311ed;
+}
+.purple .bg-primary .progress-2 .bar-holder {
+  border-color: #d373f5;
+}
+.purple .pagination li a:hover,
+.purple .pagination li.active a,
+.purple .pagination li.active:hover a {
+  background: #b311ed;
+  border-color: #b311ed;
+}
+.purple .feature.boxed.bg-dark {
+  background: #b311ed;
+}
+.purple .bg-dark .feature.boxed {
+  background: #7f0ca8;
+}
+.purple .feature-1 i {
+  color: #b311ed;
+}
+.purple .feature-2 i {
+  border: 1px solid #b311ed;
+  color: #b311ed;
+}
+.purple .feature-2 i:hover,
+.purple .feature-2.filled i {
+  background: #b311ed;
+}
+.purple .feature-3 i {
+  color: #b311ed;
+}
+.purple .feature-color:nth-of-type(1) {
+  background: #b311ed;
+}
+.purple .feature-color:nth-of-type(2) {
+  background: #7f0ca8;
+}
+.purple .feature-color:nth-of-type(3) {
+  background: #7f0ca8;
+}
+.purple .pricing-table.emphasis {
+  background: #b311ed;
+}
+.purple .cart-overview a:hover {
+  color: #b311ed;
+}
+.purple .image-bg.bg-light p,
+.purple .image-bg.bg-light span,
+.purple .image-bg.bg-light li {
+  color: #f6e3fd;
+}
+.purple .product-single .price:not(.old-price) {
+  color: #b311ed;
+}
+.purple .cart .remove-item {
+  border: 1px solid #d373f5;
+  color: #d373f5;
+}
+.purple .cart .remove-item:hover {
+  background: #d373f5;
+}
+.purple .spinner {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 2px 1px 0px #b311ed;
+}
+.purple .filters li {
+  border: 2px solid #b311ed;
+  color: #b311ed;
+}
+.purple .filters li.active {
+  border-color: #b311ed;
+}
+.purple .sc-background-orange {
+  background: #b311ed !important;
+} 
+.purple .overlay:before {
+  background: #b311ed;
+}
+.purple .image-bg h1, 
+.purple .image-bg h2, 
+.purple .image-bg h3, 
+.purple .image-bg h4, 
+.purple .image-bg h5, 
+.purple .image-bg h6 
+{
+    color: #ffffff;
+}
+.purple .image-bg .btn:hover,
+.purple .image-bg .btn:visited:hover
+{
+    background: #b311ed;
+    color: #fff;
+    border-color: #b311ed;
+}
+.purple .image-bg .btn
+{
+    color: #fff;
+}
