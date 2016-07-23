@@ -1,106 +1,91 @@
-<html>
 
-<head>
-  <title>My Dog</title>
-  <style>
-
-    body {
-  font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  padding: 50px;
-  font-size: 13px;
-  background: white;
-}
-img {
-  
- float: right; 
-  width: 50px;
-}
-
-#span2 {
-  direction: ltr;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  height: auto;
-  line-height: 17.875px;
-  text-align: left;
-  unicode-bidi: embed;
-  width: auto;
-  float: right;
-  margin-right: 50px;
-}
-
-p {
-  -webkit-locale: "en";
-  color: rgb(41, 47, 51);
-  cursor: pointer;
-  display: block;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  font-weight: 300;
-  
-  letter-spacing: 0.259999990463257px;
-  line-height: 32px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 0px;
-  padding-right:50px;
-  text-align: left;
-  white-space: pre-wrap;
-  width: 505.984375px;
-  word-wrap: break-word;
-}
-
-#div1 {
-  display: inline-block;
-  padding: 16px;
-  padding-bottom:20;
-  margin: 10px 0;
-  max-width: 506px;
-  border: #ddd 1px solid;
-  border-top-color: #eee;
-  border-bottom-color: #bbb;
-  border-radius: 5px;
-  background:#e1f5ff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
-  font: bold 14px/18px Helvetica, Arial, sans-serif; */
-  color: #000;
-}
-  	
-</style>
-  
-</head>
-
-<!--<H1>The attempted attacks, as they happen</H1>-->
+<?php
+// For debug purposes - rm before checkin KS
+error_reporting(0);
+?>
 
 <?php
 
-phpinfo();
-
+// We need at least one ofthese for the page to work.
 $name = $_GET["name"];
 $key = $_GET["key"];
 $limit = $_GET["limit"];
 
-if ($name !== "" || $key !== "") {
-	$connection = new MongoClient("mongodb://localhost:27017");
-	$dbname = $connection->selectDB('skad');
-	$attempts = $dbname->attempts;
-	$dogs = $dbname->dogs;
-	$rhosts = $dbname->rhosts;
+//Let's just get a reasonable number of barks as default
+if ($limit == ""){
+	$limit = 25;
+}
 
-	if (empty($name)) {
-		$names = iterator_to_array($dogs->find(array("key" => "$key")));
-		$name = array_values($names)[0]["name"];
-	}
-	else if (empty($key)) {
-		$names = iterator_to_array($dogs->find(array("key" => "$key")));
-		$keys = iterator_to_array($dogs->find(array("name" => "$name")));
-		$key = array_values($keys)[0]["key"];
-	}
+// No dog name or key? Go to the index page where it is requested.
+if ($name == "" && $key == ""){
+	header('Location: index.php');
+}
 
-// Title of page:
-        echo "<H1>The attempted attacks on $name, as they happen</H1>\n";
-        
+?>
+
+
+
+<!doctype html>
+<html lang="en">
+<?php include 'head.html'; ?> 
+<body class="dashboard">
+<?php include 'nav.html'; ?> 
+
+       
+<?php
+
+//Need to be sure that the name is capitalised same as in DB
+if ($name !== ""){
+    $name = ucfirst( strtolower($name) );
+}
+
+// Connect to MongoDB and get the basics.
+$connection = new MongoClient("mongodb://localhost:27017");
+$dbname = $connection->selectDB('skad');
+$attempts = $dbname->attempts;
+$dogs = $dbname->dogs;
+$rhosts = $dbname->rhosts;
+
+if (empty($name)) {
+	$names = iterator_to_array($dogs->find(array("key" => "$key")));
+	$name = array_values($names)[0]["name"];
+}
+
+else if (empty($key)) {
+	$names = iterator_to_array($dogs->find(array("key" => "$key")));
+	$keys = iterator_to_array($dogs->find(array("name" => "$name")));
+	$key = array_values($keys)[0]["key"];
+}
+
+?>
+<!-- Dog heading bar -->
+<section class="page-title page-title-3 bg-secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3 class="uppercase mb0">Attacks on <?php echo $name; ?></h3>
+            </div>
+         </div>
+    </div>
+</section>
+
+<!-- Map section -->
+<!--section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="uppercase mb0">D3 Map</h2>
+            </div>
+         </div>
+    </div>
+</section-->
+
+<!-- The notifications section -->
+<section >
+    <div class="container">
+        <div class="row">
+        	<div class="col-sm-8">
+ <?php    
 	$query = array("key" => "$key");
 	
 	if (empty($name)) {
@@ -146,24 +131,82 @@ if ($name !== "" || $key !== "") {
 
 	//	$timestamp = date_format(date_create($result["timestamp"]), 'U = Y-m-d H:i:s');
 	//	$timestamp = date_create_from_format("Ymd-His", $result["timestamp"]);
-	        $timestamp = DateTime::createFromFormat('Ymd - His', $result["timestamp"])->format('d M Y  h:i:s');
-		//$timestamp = $result["timestamp"];
+	    $timestamp = DateTime::createFromFormat('Ymd - His', $result["timestamp"])->format('d M Y  h:i:s');
+	    $timestamp_unix = DateTime::createFromFormat('Ymd - His', $result["timestamp"])->format('U');
+	    $ago = time() - $timestamp_unix;
+	    $plural = "";
+        $fresh = "";
+	    
+	    // If the bark is pretty fresh, add the 'fresh' class and styling to the bark.
+	    if ($ago < 1800){
+           $fresh = "fresh";
+	    }
+
+
+	    // Turn into most sensible unit
+        $ago = floor($ago / 60);
+        $unit = "minute";
+        if ($ago > 60){
+        	 $ago = floor($ago / 60);
+             $unit = "hour";
+        }
+        if ($ago > 24){
+        	 $ago = floor($ago / 24);
+             $unit = "day";
+        }
+        if ($ago > 7){
+        	 $ago = floor($ago / 7);
+             $unit = "week";
+        }
+        // And add the 's' if it's not just 1
+        if ($ago !== 1){
+        	$plural = "s";
+        }
+
+	    //$timestamp = $result["timestamp"];
 		$org = $source["org"];
 		$city = $source["city"];
 		$country = $source["country"];
 		$rhost = $result["rhost"];
 		$user = $result["user"];
 
-		echo "<div id='div1'>\n";
-		echo "<img id='img1' src='skaddog_small.jpg'></img>\n";
-		echo "<span id='span1'>&rlm;</span>\n";
-		echo "<span id='span2'>$timestamp</span>\n";
-		echo "<p>\n";
-		echo "$org ($rhost) tried to logon as [$user] from $city in $country #alerted =$name=";
+		if ($org == "") {
+			$org = "Unknown attacker";
+		}
+
+		echo "<div id='div1' class='feature mt16 col-sm-12 bg-secondary bark $fresh'>\n";
+		echo "<span id='span2' class='time'>$ago $unit$plural ago</span>\n";
+		echo "<p class='mt8'>\n";
+		echo "$org ($rhost) tried to logon to $name from $city in $country as [$user]";
 		echo "</p>\n";
 		echo "</div>\n";
 	}
-}	
-
 ?>
+            </div>
+
+
+<!-- The graphs section -->
+
+        	<div class="col-sm-4">
+
+<div class='feature mt16 col-sm-12 bg-secondary graph'>
+<p>Graph</p>
+</div>
+
+<div class='feature mt16 col-sm-12 bg-secondary graph'>
+<p>Graph</p>
+</div>
+
+<div  class='feature mt16 col-sm-12 bg-secondary graph'>
+<p>Graph</p>
+</div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <?php include 'footer.html'; ?> 
+    </body>
 </html>
