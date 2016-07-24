@@ -42,6 +42,7 @@ switch ($method) {
 
 	// Temporary fix
 	$device = "";
+	$tweets = false;
 
 	$dogs = $dbname->dogs;
 	$key = $input["key"];
@@ -50,8 +51,10 @@ switch ($method) {
 	file_put_contents($debugfile, "############################\n", FILE_APPEND | LOCK_EX);
 
 	if (!empty($names)) {
-		$device = array_values($names)[0]["name"];
-		file_put_contents($debugfile, "Retrieved name from database: $device\n", FILE_APPEND | LOCK_EX);
+		$dog = array_values($names)[0];
+		$device = $dog["name"];
+		$tweets = ($dog["tweets"] == Y);
+		file_put_contents($debugfile, "Retrieved name from database: $device (tweets=$tweets)\n", FILE_APPEND | LOCK_EX);
 	}
 	else {
 		$device = "Anonymous";
@@ -75,8 +78,15 @@ switch ($method) {
 		$command = $twitterExec." update \"".$tweet."\"";
 		
 		file_put_contents($debugfile, "About to tweet -> ".$tweet."\n", FILE_APPEND | LOCK_EX);		
-		file_put_contents($debugfile, "command=".$command."\n", FILE_APPEND | LOCK_EX);			
-		$output = shell_exec($command." 2>&1");
+		file_put_contents($debugfile, "command=".$command."\n", FILE_APPEND | LOCK_EX);
+
+		if ($tweets) {
+			$output = shell_exec($command." 2>&1");
+		}
+		else {
+			file_put_contents($debugfile, "NOT TWEETING - this dog needs [tweets = Y] set in the database\n", FILE_APPEND | LOCK_EX);
+		}
+
 		file_put_contents($debugfile, "shell_exec output=".$output."\n", FILE_APPEND | LOCK_EX);	
 		if ($input['user'] === 'skadtest') {
 			file_put_contents($debugfile, "Switching twitter account back to SKAD_Dog\n", FILE_APPEND | LOCK_EX);
