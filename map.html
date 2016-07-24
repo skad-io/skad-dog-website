@@ -6,9 +6,9 @@
   <!-- map creation --> 
   <script>
   // canvas resolution
-  var viewportWidth = $("div.map").();
-  var width = viewportWidth * .95;
-  var height = width*0.6;
+  var viewportWidth = $("div.map").width();
+  var width = viewportWidth * .8;
+  var height = width * 0.5;
   
   // projection-settings for mercator    
   var projection = d3.geo.mercator()
@@ -62,8 +62,8 @@ d3.select(window).on('resize', resize);
 function resize() {
   
     width = parseInt(d3.select('div.map').style('width'));
-    width = $('div.map').width() * .95;
-    height = width * 0.6;
+    width = $('div.map').width() * .8;
+    height = width * 0.5;
   
    projection
       .scale([width/10])

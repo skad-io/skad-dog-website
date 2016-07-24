@@ -229,7 +229,7 @@ else if (empty($key)) {
         	</div>
 
     
-<!-- The graphs section -->
+<!-- The graphs section 
 
 <div class='feature mt16 col-sm-12 bg-secondary graph'>
 <p>Graph</p>
@@ -242,6 +242,7 @@ else if (empty($key)) {
 <div  class='feature mt16 col-sm-12 bg-secondary graph'>
 <p>Graph</p>
 </div>
+-->
 
             </div>
         </div>

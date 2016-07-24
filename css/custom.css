@@ -22,7 +22,7 @@ section.map-section {
   padding: 0;
 }
 .map-section{
-  max-height: 5000px;
+  max-height: 500px;
 }
 .map{
   margin-right: auto;
@@ -57,10 +57,11 @@ path {
   background-size:  auto 100% !important;
   background-repeat: no-repeat !important;
 }
-
-
-
-
+@media (max-width: 767px) {
+  .title-icon {
+    display: none;
+  }
+}
 
 
 
