@@ -16,7 +16,7 @@ switch ($method) {
 	$results = $dmzstatus->find();
 	foreach ($results as $result) {
 
-		//TODO Might want to get the name of each dog using the following code
+		// Get the officially stored dog name and not the one that was passed in (incase someone's been tweaking with the dog)
 		$dogs = $dbname->dogs;		
 		$names = iterator_to_array($dogs->find(array("key" => "$key")));
 
@@ -25,13 +25,12 @@ switch ($method) {
 
 		$dogs = $dbname->dogs;		
 		$names = iterator_to_array($dogs->find(array("key" => "$key")));
+		$name = array_values($names)[0]["name"]; 
+		$timestamp = DateTime::createFromFormat('Ymd - His', $result["timestamp"])->format('d M Y  h:i:s');
 
-		echo array_values($names)[0]["name"].": ";
+		echo "$name: DMZ=".$result['DMZ'].", last seen=$timestamp<BR>\n";
 
-		foreach ($result as $item) {            			
-            echo "$item,";            
-		}		
-		echo "<BR>\n";
+		//var_dump($result);
 	}	
         break;
   case 'PUT':
