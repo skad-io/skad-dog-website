@@ -18,13 +18,13 @@
                         </div>
                     </div>
 
-                    <div class="photo-attribution">
-                    Photo by <a href="https://www.flickr.com/photos/donabelandewen/">Ewen Roberts</a>, licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 License</a>
-                    </div>      
+                       
                 </div>
-
+                <div class="photo-attribution">
+                    Photo by <a href="https://www.flickr.com/photos/donabelandewen/">Ewen Roberts</a>, licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 License</a>
+                </div> 
             </section>
-            <section class="page-title page-title-3 bg-secondary">
+            <section class="page-title page-banner-small bg-hot">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 text-center">

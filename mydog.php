@@ -59,7 +59,7 @@ else if (empty($key)) {
 
 ?>
 <!-- Dog heading bar -->
-<section class="page-title page-title-3 bg-secondary">
+<section class="page-title page-banner-small bg-secondary">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
@@ -70,8 +70,7 @@ else if (empty($key)) {
 </section>
 
 <!-- Map section -->
-<section>
-    <div class="container">
+<section class="map-section z-depth-1">
         <div class="row">
             <div class="map">
 

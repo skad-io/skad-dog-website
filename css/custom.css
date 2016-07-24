@@ -12,16 +12,85 @@ a .dark-text{
 	font-size: 3em;
 }
 
-  svg{
-    background-color: #009df0;
-  }
+/* Stuff for the map section */
+section.map-section {
+  padding: 0;
+}
+.map-section .row {
+  background-color: #009df0;
+  padding: 0;
+}
+.map{
+  margin-right: auto;
+  margin-left: auto;
+}
+svg{
+  background-color: #009df0;
+}
 
-  svg circle{
-    background-color: #fb8013;
-    color: #fb8013;
-  }
-  path {
-    stroke: #fff;
-    stroke-width: 0.5px;
-    fill: #fff;
-  }
+svg circle{
+  background-color: #fb8013;
+  color: #fb8013;
+}
+path {
+  stroke: #fff;
+  stroke-width: 0.5px;
+  fill: #fff;
+}
+
+
+/* Stuff for the barks */
+.bark {
+  background-color: #fff;
+  padding: 16px;
+  -webkit-border-radius: 12px; 
+  -moz-border-radius: 12px; 
+  border-radius: 12px; 
+  margin-bottom: 32px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Google Material shadow style for dashboard only 
+.dashboard .z-depth-0 {
+  box-shadow: none !important;
+}
+
+.dashboard .z-depth-1,
+.dashboard .bark,
+.dashboard .graph {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.dashboard .z-depth-1-half {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.dashboard .z-depth-2 {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dashboard .z-depth-3,
+.dashboard .nav-bar {
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dashboard .z-depth-4 {
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+}
+
+.dashboard .z-depth-5 {
+  box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+}
+
+*/

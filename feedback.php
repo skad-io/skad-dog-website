@@ -21,11 +21,11 @@
                          <div class="col-md-3">
                             
                         </div>
-                    </div>
-                    <div class="photo-attribution">
-                    Photo by <a href="https://www.flickr.com/photos/trasgu74/">Javi</a>, licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 License</a>
-                    </div>      
+                    </div>    
                 </div>
+                <div class="photo-attribution">
+                Photo by <a href="https://www.flickr.com/photos/trasgu74/">Javi</a>, licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 License</a>
+                </div>  
             </section>
 
     <?php include 'footer.html'; ?> 
