@@ -24,7 +24,7 @@ if ($debugfile) file_put_contents($debugfile, "remotegitbranch = [$remotegitbran
 if ($gitbranch === $remotegitbranch) {
 
 	if ($debugfile) file_put_contents($debugfile, "We have a match\n", FILE_APPEND | LOCK_EX);
-	$output = shell_exec("cd /home/pi/SKAD && /usr/bin/sudo /usr/bin/git pull");
+	$output = shell_exec("cd /home/pi/SKAD && /usr/bin/sudo /usr/bin/git pull 2>&1");
 	if ($debugfile) file_put_contents($debugfile, "output = [$output]\n", FILE_APPEND | LOCK_EX);
 }
 
