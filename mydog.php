@@ -21,6 +21,8 @@ if ($name == "" && $key == ""){
 	header('Location: index.php');
 }
 
+// Set the page to refresh once every 5 minutes.
+header("Refresh: 300");
 ?>
 
 
@@ -60,6 +62,9 @@ else if (empty($key)) {
 ?>
 <!-- Dog heading bar -->
 <section class="page-title page-banner-small bg-secondary">
+	<div class="title-icon background-image-holder">
+        <img alt="image" class="float-left small" src="img/watch-dog-icon.png">
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
@@ -70,17 +75,22 @@ else if (empty($key)) {
 </section>
 
 <!-- Map section -->
-<section class="map-section z-depth-1">
-        <div class="row">
-            <div class="map">
+<section class="map-section z-depth-1 no-pad">
+	<div class="container">
+        <div class="row  no-pad text-center">
+
+        <div class="col-sm-12">
+            <div class="map  no-pad">
 
             </div>
          </div>
     </div>
+    </div>
+    </div>
 </section>
 
-<!-- The notifications section -->
-<section >
+<!-- The notifications and graphs section -->
+<section  class="no-pad mt32">
     <div class="container">
         <div class="row">
         	<div class="col-sm-8">
@@ -184,7 +194,7 @@ else if (empty($key)) {
 			$org = "Unknown attacker";
 		}
 
-		echo "<div id='div1' class='feature mt16 col-sm-12 bg-secondary bark $fresh'>\n";
+		echo "<div id='div1' class='feature col-sm-12 bg-secondary bark $fresh'>\n";
 		echo "<span id='span2' class='time'>$ago $unit$plural $text</span>\n";
 		echo "<p class='mt8'>\n";
 		echo "$org ($rhost) tried to logon to $name from $city in $country as [$user]";
@@ -203,9 +213,23 @@ else if (empty($key)) {
             </div>
 
 
-<!-- The graphs section -->
+<!-- The sidebar -->
 
         	<div class="col-sm-4">
+        		
+
+        		<!-- Limit links and refresh button -->
+
+  
+        	<div class="col-sm-12 feature text-center graph bg-secondary">
+                <p class="uppercase mt8">Number of results to show</p>
+                <span class="col-sm-12 no-pad"><a class="btn text-center <?php if ($limit == 25){echo "btn-filled";} ?>" href="mydog.php?limit=25&name=<?php echo "$name"; ?>">25</a></span>
+                <span class="col-sm-12 no-pad"><a class="btn text-center <?php if ($limit == 50){echo "btn-filled";} ?>" href="mydog.php?limit=50&name=<?php echo "$name"; ?>">50</a></span>
+                <span class="col-sm-12 no-pad"><a class="btn text-center <?php if ($limit == 100){echo "btn-filled";} ?>" href="mydog.php?limit=100&name=<?php echo "$name"; ?>">100</a></span>
+        	</div>
+
+    
+<!-- The graphs section -->
 
 <div class='feature mt16 col-sm-12 bg-secondary graph'>
 <p>Graph</p>
@@ -222,25 +246,11 @@ else if (empty($key)) {
             </div>
         </div>
     </div>
-</section>
-
-<?php include 'map.html'; ?> 
-<script>
-var places = <?php echo "$places"; ?>;
- 
-     svg.selectAll(".pin")
-          .data(places)
-          .enter().append("circle", ".pin")
-          .attr("r", 5)
-          .attr("transform", function(d) {
-            return "translate(" + projection([
-              d.location.longitude,
-              d.location.latitude
-            ]) + ")";
-          }).
-          style( "fill", "#fb8013");     
-    </script>
-              
+    </section>
+	<script>
+	var places = <?php echo "$places"; ?>;
+	</script>
+    <?php include 'map.html'; ?>               
     <?php include 'footer.html'; ?> 
     </body>
 </html>

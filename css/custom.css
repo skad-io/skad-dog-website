@@ -16,9 +16,13 @@ a .dark-text{
 section.map-section {
   padding: 0;
 }
-.map-section .row {
+.map-section .row,
+.map-section{
   background-color: #009df0;
   padding: 0;
+}
+.map-section{
+  max-height: 5000px;
 }
 .map{
   margin-right: auto;
@@ -48,10 +52,11 @@ path {
   border-radius: 12px; 
   margin-bottom: 32px;
 }
-
-
-
-
+.title-icon {
+  background-position: 10% 0% !important;
+  background-size:  auto 100% !important;
+  background-repeat: no-repeat !important;
+}
 
 
 
