@@ -91,3 +91,9 @@ section.no-pad{
 .selected {
   text-decoration: underline;
 }
+@media (max-width: 990px){
+  .mobile-toggle {
+      border: none !important;
+      border-left: 1px solid #69cbff !important; 
+    }
+}
