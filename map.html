@@ -1,24 +1,29 @@
 <!-- implementation of the hosted D3- and TopoJson js-libraries -->
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://d3js.org/topojson.v0.min.js"></script>
+  <script src="js/jquery.min.js"></script>
    
   <!-- map creation --> 
   <script>
   // canvas resolution
-  var width = 1000,
-      height = 600;
-
+  var viewportWidth = $("div.map").width();
+  var width = viewportWidth * .8;
+  var height = width * 0.5;
+  
   // projection-settings for mercator    
   var projection = d3.geo.mercator()
       // where to center the map in degrees
-      .center([0, 50 ])
+      .center([12, 30])
       // zoomlevel
-      .scale(100)
+      .scale(width/10)
       // map-rotation
-      .rotate([0,0]);
+      .rotate([0,0])
+      // Position
+      .translate([width/2, height/2]);
  
   // defines "svg" as data type and "make canvas" command
   var svg = d3.select("div.map").append("svg")
+      .attr("class", "no-pad")
       .attr("width", width)
       .attr("height", height);
  
@@ -38,5 +43,52 @@
         .append("path")
         .attr("d", path)
   });
+
+  // Add pins to the map (if defined)
+  svg.selectAll(".pin")
+        .data(places)
+        .enter().append("circle", ".pin")
+        .attr("r", 5)
+        .attr("transform", function(d) {
+          return "translate(" + projection([
+            d.location.longitude,
+            d.location.latitude
+          ]) + ")";
+        })
+        .style( "fill", "#fb8013");     
+
+d3.select(window).on('resize', resize);
+
+function resize() {
+  
+    width = parseInt(d3.select('div.map').style('width'));
+    width = $('div.map').width() * .8;
+    height = width * 0.5;
+  
+   projection
+      .scale([width/10])
+      .translate([width/2, height/2]);
+    
+   d3.select("div.map").attr("width",width).attr("height",height);
+   d3.select("svg").attr("width",width).attr("height",height);
+  
+   d3.selectAll("path").attr('d', path);
+
+   svg.selectAll("circle").data([]).exit().remove();
+
+   svg.selectAll(".pin")
+        .data(places)
+        .enter().append("circle", ".pin")
+        .attr("r", 5)
+        .attr("transform", function(d) {
+          return "translate(" + projection([
+            d.location.longitude,
+            d.location.latitude
+          ]) + ")";
+        })
+        .style( "fill", "#fb8013");     
+
+}
+
   
 </script>

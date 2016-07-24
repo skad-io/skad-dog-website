@@ -1,0 +1,93 @@
+body{
+  background-color: #e1f5ff;
+  color: #505050;
+}
+nav{ 
+  background: #009df0;
+  color: white;
+}
+nav .menu li a{ 
+  color: white;
+  font-size: 13px;
+  opacity: 0.75;
+}
+.btn:visited {
+  background-color: white;
+  color: #fb8013;
+}
+
+.btn {
+  border: 2px solid #fb8013;
+  color: #fb8013;
+}
+nav .menu li.highlight a,
+.btn-filled,
+.btn-filled:visited,
+.btn-filled:hover,
+.btn:hover
+{ 
+  background-color: #fb8013;
+  color: white;
+  opacity: 1;
+}
+.btn-slim{
+  min-width: 50px;
+  font-size: 15pt;
+  display: inline;
+}
+.nav-bar {
+  border-bottom: 1px solid #00796b;
+  color: white;
+}
+.logo-dark{
+  display: none;
+}
+.logo-light{
+  display: inline;
+}
+.photo-attribution{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  color: white;
+}
+.photo-attribution a{
+  color: white;
+}
+a{
+  color: #fb8013;
+}
+.bg-secondary{
+  background-color: #fff;
+}
+.bg-hot{
+  background-color: #fb8013;
+  color: #fff;
+}
+.bg-hot h1,
+.bg-hot h2,
+.bg-hot h3,
+.bg-hot h4,
+.bg-hot h5,
+.bg-hot a {
+  background-color: #fb8013;
+  color: #fff;
+}
+.page-banner-small{
+  height: 80px;
+}
+section.no-pad{
+  padding: 0;
+}
+.text-hot{
+  color: #fb8013;
+}
+.heavy{
+  font-size: 15pt;
+  font-weight: 700;
+  padding: 8px;
+}
+.selected {
+  text-decoration: underline;
+}
