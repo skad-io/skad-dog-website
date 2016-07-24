@@ -2,7 +2,7 @@
 
 $debugfile = '/tmp/skad_dog.debug.txt';
 
-file_put_contents($debugfile, "############################\n", FILE_APPEND | LOCK_EX);
+//file_put_contents($debugfile, "############################\n", FILE_APPEND | LOCK_EX);
 
 // get the HTTP method, path and body of the request
 $method = $_SERVER['REQUEST_METHOD'];
@@ -21,7 +21,7 @@ switch ($method) {
 		$names = iterator_to_array($dogs->find(array("key" => "$key")));
 
 		$key = $result["key"];		
-		file_put_contents($debugfile, "key: $key\n", FILE_APPEND | LOCK_EX);
+//		file_put_contents($debugfile, "key: $key\n", FILE_APPEND | LOCK_EX);
 
 		$dogs = $dbname->dogs;		
 		$names = iterator_to_array($dogs->find(array("key" => "$key")));
@@ -46,7 +46,7 @@ switch ($method) {
 	$input = json_decode(file_get_contents('php://input'),true);
 	$key = $input['key'];
 	
-	file_put_contents($debugfile, "key: $key\n", FILE_APPEND | LOCK_EX);
+//	file_put_contents($debugfile, "key: $key\n", FILE_APPEND | LOCK_EX);
 
 	$input['remoteAddr'] = $remoteAddr;
 	$input['httpXForwardedFor'] = $httpXForwardedFor;
