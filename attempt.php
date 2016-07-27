@@ -80,7 +80,14 @@ switch ($method) {
 	$shellExec = "/usr/bin/sudo ";
 	$twitterExec = $shellExec."/usr/local/bin/t";
 
-	if ($input['user'] === 'skadtest') {
+	// This code assumes that prod has been set up to tweet both SKAD_Dog & SKAD_Test
+	// It also assumes that all non-prod servers have been set up to only tweet to SKAD_Test
+	// On all non-prod servers every attempt will be tweeted to SKAD_Test
+	// For prod server it will tweet to the following
+	// - SKAD_Test when the userid is skadtest
+	// - SKAD_Dog for all other userids 
+
+	if ($input['user'] === 'skadtest' && $gitbranch == "prod") {
 		file_put_contents($debugfile, "Switching twitter account to SKAD_Test\n", FILE_APPEND | LOCK_EX);
 		$command = $twitterExec." set active SKAD_Test tmv9q0pmITaLbNZG2PkeH80t1";
 		file_put_contents($debugfile, "command=".$command."\n", FILE_APPEND | LOCK_EX);		
@@ -90,10 +97,11 @@ switch ($method) {
 	
 	$command = $twitterExec." update \"".$tweet."\"";
 	
-	file_put_contents($debugfile, "About to tweet -> ".$tweet."\n", FILE_APPEND | LOCK_EX);		
-	file_put_contents($debugfile, "command=".$command."\n", FILE_APPEND | LOCK_EX);
+	file_put_contents($debugfile, "Tweet: ".$tweet."\n", FILE_APPEND | LOCK_EX);		
+	file_put_contents($debugfile, "command: ".$command."\n", FILE_APPEND | LOCK_EX);
 
 	if ($tweets) {
+		file_put_contents($debugfile, "Dog is allowed to tweet so calling above command\n", FILE_APPEND | LOCK_EX);		
 		$output = shell_exec($command." 2>&1");
 	}
 	else {
@@ -101,7 +109,8 @@ switch ($method) {
 	}
 
 	file_put_contents($debugfile, "shell_exec output=".$output."\n", FILE_APPEND | LOCK_EX);	
-	if ($input['user'] === 'skadtest') {
+	
+	if ($input['user'] === 'skadtest' && $gitbranch == "prod") {
 		file_put_contents($debugfile, "Switching twitter account back to SKAD_Dog\n", FILE_APPEND | LOCK_EX);
 		$command = $twitterExec." set active SKAD_Dog 8FLtRR906YYAFq7wmFaYCmDMA";
 		file_put_contents($debugfile, "command=".$command."\n", FILE_APPEND | LOCK_EX);		
