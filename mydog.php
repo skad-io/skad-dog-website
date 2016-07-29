@@ -193,19 +193,36 @@ else if (empty($key)) {
 		if ($org == "") {
 			$org = "Unknown attacker";
 		}
+         
+        $location = "";
+		if ($city == "") {
+			if ($country == "") {
+				$location = "a mysterious location";
+			}
+			else {
+                $location = $country;
+		    }
+		} else {
+			if ($country == "") {
+				$location = $city;
+			}
+			else {
+                $location = $city . " in " . $country;
+		    }
+		}
 
 		echo "<div id='div1' class='feature col-sm-12 bg-secondary bark $fresh'>\n";
 		echo "<span id='span2' class='time'>$ago $unit$plural $text</span>\n";
 		echo "<p class='mt8'>\n";
-		echo "$org ($rhost) tried to logon to $name from $city in $country as [$user]";
+		echo "$org ($rhost) tried to logon from $location as [$user]";
 		echo "</p>\n";
 		echo "</div>\n";
 
 		$latitude = $source["lat"];
 		$longitude = $source["lon"];
-
-		$places = $places . "{ location: { latitude: " . $latitude . ", longitude: " . $longitude . " } },";
-
+        if ($latitude != "" && $longitude !="") {
+			$places = $places . "{ location: { latitude: " . $latitude . ", longitude: " . $longitude . " } },";
+        }
 	}
 	$places = $places . "]";
 	
