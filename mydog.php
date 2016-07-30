@@ -33,6 +33,7 @@ header("Refresh: 300");
 <body class="dashboard">
 <?php include 'nav.html'; ?> 
 
+
        
 <?php
 
@@ -47,6 +48,7 @@ $dbname = $connection->selectDB('skad');
 $attempts = $dbname->attempts;
 $dogs = $dbname->dogs;
 $rhosts = $dbname->rhosts;
+$dmzstatus = $dbname->dmzstatus;
 
 if (empty($name)) {
 	$names = iterator_to_array($dogs->find(array("key" => "$key")));
@@ -58,6 +60,25 @@ else if (empty($key)) {
 	$keys = iterator_to_array($dogs->find(array("name" => "$name")));
 	$key = array_values($keys)[0]["key"];
 }
+
+// Find the latest heartbeat for this guy.
+$dmzresults = $dmzstatus->find(array("key" => "$key"));
+$dmztimestamp = 0;
+$dmzstatus = "";
+
+foreach ($dmzresults as $dmzresult) {
+	$timestamp = DateTime::createFromFormat('Ymd - His', $dmzresult["timestamp"])->format('U');
+	$dmz = $dmzresult['DMZ'];
+    if ($timestamp > $dmztimestamp){
+    	$dmztimestamp = $timestamp;
+    	$dmzstatus = $dmz;
+    }
+}	
+
+$lastmidnight = 1469800000;
+$date = date('Y-m-d');
+// Actually one minute to midnight
+$lastmidnight = strtotime($date) - 60;
 
 ?>
 <!-- Dog heading bar -->
@@ -107,6 +128,7 @@ else if (empty($key)) {
 	$apicount = 0;
 	$sourcesCache = array();
 	$places = "[";
+	$latestbark = 0;
 
 	foreach ($results as $result) {
 		$rhost = $result["rhost"];
@@ -218,6 +240,10 @@ else if (empty($key)) {
 		echo "</p>\n";
 		echo "</div>\n";
 
+		if ($timestamp_unix > $latestbark){
+    	    $latestbark = $timestamp_unix;
+        }
+
 		$latitude = $source["lat"];
 		$longitude = $source["lon"];
         if ($latitude != "" && $longitude !="") {
@@ -225,6 +251,34 @@ else if (empty($key)) {
         }
 	}
 	$places = $places . "]";
+
+    // default = alert
+    $dogstatus = "alert";
+    $dmzdescription = "$name is in the DMZ and ready to bark.";
+
+    // if it says it's active in the DMZ, get its most recent action
+	if ($dmzstatus == "Y" ){
+        if ($latestbark > $dmztimestamp){
+        	$dmztimestamp = $latestbark;
+        }
+	} 
+    // if it doesn't say it's in the DMZ and hasn't barked since then, it's asleep
+	else {
+	    if ($latestbark < $dmztimestamp) {
+            $dogstatus = "asleep";
+            $dmzdescription = "$name is not in the DMZ.";
+        } else {
+        	// This section puts a correct date in for dogs without the DMZ stuff, but who have barked.
+        	$dmztimestamp = $latestbark;
+        }
+	}
+	// if it hasn't pinged since before midnight last night, it's probably not plugged in -> away
+    if ($dmztimestamp < $lastmidnight){
+        $dogstatus = "away";
+        $dmzdescription = "We haven't heard from $name in a while.";
+    }
+
+    $dmztime = DateTime::createFromFormat('U', $dmztimestamp)->format(' H:i') . ' on ' . DateTime::createFromFormat('U', $dmztimestamp)->format('d M Y');
 	
 ?>
             </div>
@@ -238,8 +292,13 @@ else if (empty($key)) {
         		<!-- Limit links and refresh button -->
 
   
-        	<div class="col-sm-12 feature text-center graph bg-secondary">
-                <p class="uppercase mt8">Number of results to show</p>
+        	<div class="col-sm-12 feature boxed text-center status bg-secondary">
+                <h4><?php echo "$name is $dogstatus"; ?></h4>
+                <p><?php echo "$dmzdescription"; ?></p>
+                <p><?php echo "Last seen at $dmztime"; ?></p>
+        	</div>
+        	<div class="col-sm-12 feature boxed text-center graph bg-secondary">
+                <h4>Number of results</h4>
                 <span class="col-sm-12 no-pad"><a class="btn text-center <?php if ($limit == 25){echo "btn-filled";} ?>" href="mydog.php?limit=25&name=<?php echo "$name"; ?>">25</a></span>
                 <span class="col-sm-12 no-pad"><a class="btn text-center <?php if ($limit == 50){echo "btn-filled";} ?>" href="mydog.php?limit=50&name=<?php echo "$name"; ?>">50</a></span>
                 <span class="col-sm-12 no-pad"><a class="btn text-center <?php if ($limit == 100){echo "btn-filled";} ?>" href="mydog.php?limit=100&name=<?php echo "$name"; ?>">100</a></span>
