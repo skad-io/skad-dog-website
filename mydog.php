@@ -1,6 +1,6 @@
 
 <?php
-// For debug purposes - rm before checkin KS
+// For debug purposes - rm before checkin KS - update check
 error_reporting(0);
 ?>
 
