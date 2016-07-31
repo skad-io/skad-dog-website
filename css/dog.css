@@ -61,6 +61,9 @@ a{
 .bg-secondary{
   background-color: #fff;
 }
+.feature.boxed.bg-secondary{
+  background-color: #fff;
+}
 .bg-hot{
   background-color: #fb8013;
   color: #fff;
