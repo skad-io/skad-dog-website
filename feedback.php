@@ -6,7 +6,7 @@
 
             <section class="cover fullscreen">
                 <div class="background-image-holder">
-                    <img alt="image" class="background-image" src="img/coffee-shop.jpg">
+                    <img alt="image" class="background-image" src="img/feedback-dogs.jpg">
                 </div>
                 <div class="container v-align-transform">
                     <div class="row">
@@ -15,8 +15,9 @@
                         </div>
                          <div class="col-md-6 col-sm-8">
                             <h3 class="mb40 mb-xs-16 large">We're keen to hear your feedback on our beta Watch Dogs</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>We'll be in touch once you've had your dog for a while to see how you're getting along.</p>
+                            <p>In the meantime, if there's something you want to tell us or ask us, get in touch at <a href="mailto:hello@skad.io">hello@skad.io</a>.</p>
+
                          </div>
                          <div class="col-md-3">
                             
@@ -24,7 +25,7 @@
                     </div>    
                 </div>
                 <div class="photo-attribution">
-                Photo by <a href="https://www.flickr.com/photos/trasgu74/">Javi</a>, licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 License</a>
+                Photo by <a href="https://www.flickr.com/photos/heatherortega/8543396502/">Heather Ortega</a>, licensed under a <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution 2.0 License</a>
                 </div>  
             </section>
 
